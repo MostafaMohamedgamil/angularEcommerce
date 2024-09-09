@@ -10,6 +10,7 @@ import { SeemorePipe } from './pipes/seemore.pipe';
 import { SharedRoutingModule } from './shared-routing.module';
 import { CardComponent } from './components/card/card.component';
 import { FlashsalesaliderComponent } from './components/flashsalesalider/flashsalesalider.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 // import { SwiperModule } from 'swiper/angular';
 register();
 @NgModule({
@@ -20,6 +21,7 @@ register();
     CategorysliderComponent,
     FlashsalesaliderComponent,
     MainsliderComponent,
+    NotfoundComponent
   ],
   imports: [
     CommonModule,
@@ -35,6 +37,7 @@ register();
     CategorysliderComponent,
     FlashsalesaliderComponent,
     MainsliderComponent,
+    NotfoundComponent
   ],
 })
 export class SharedModule {}
