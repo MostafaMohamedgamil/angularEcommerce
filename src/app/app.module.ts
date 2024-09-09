@@ -15,34 +15,22 @@ import { ToastrModule } from 'ngx-toastr';
 // import { AllproductsComponent } from './allproducts/allproducts.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
 import { LoginModule } from './login/login.module';
-import { NavbarComponent } from './navbar/navbar.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { RegisterComponent } from './register/register.component';
 import { SignupComponent } from './signup/signup.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
 // register();
 
 @NgModule({
   declarations: [
     AppComponent,
-    // BrandsComponent,
-    // CartComponent,
-    // CategoriesComponent,
     FooterComponent,
-    // HomeComponent,
-    // LoginComponent,
     NavbarComponent,
     NotfoundComponent,
-    RegisterComponent,
     WishlistComponent,
     SignupComponent,
-    // FlashsalesaliderComponent,
-    // ProductdetaliesComponent,
-    // SwiperComponent,
-    // CategorysliderComponent,
-    // AllproductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,15 +41,14 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     HttpClientModule,
     FontAwesomeModule,
     BsDropdownModule,
-    // CarouselModule,
     FormsModule,
     ToastrModule.forRoot(),
-    LoginModule
+    LoginModule,
+    ReactiveFormsModule,
   ],
-
 
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}

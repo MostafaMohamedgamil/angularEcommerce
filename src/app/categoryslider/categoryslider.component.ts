@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { register } from 'swiper/element/bundle';
-import { AllproductService } from '../allproduct.service';
+import { AllproductService } from '../shared/services/allproduct.service';
 register();
 
 @Component({

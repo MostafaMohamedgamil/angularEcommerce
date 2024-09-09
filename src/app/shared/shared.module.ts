@@ -5,13 +5,13 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { register } from 'swiper/element/bundle';
 import { CategorysliderComponent } from '../categoryslider/categoryslider.component';
 import { MainsliderComponent } from '../mainslider/mainslider.component';
-import { CardComponent } from './card/card.component';
-import { FlashsalesaliderComponent } from './flashsalesalider/flashsalesalider.component';
 import { SearchPipe } from './pipes/search.pipe';
 import { SeemorePipe } from './pipes/seemore.pipe';
 import { SharedRoutingModule } from './shared-routing.module';
-// import { SwiperModule } from 'swiper/angular'; 
-register()
+import { CardComponent } from './components/card/card.component';
+import { FlashsalesaliderComponent } from './components/flashsalesalider/flashsalesalider.component';
+// import { SwiperModule } from 'swiper/angular';
+register();
 @NgModule({
   declarations: [
     CardComponent,
@@ -19,8 +19,7 @@ register()
     SeemorePipe,
     CategorysliderComponent,
     FlashsalesaliderComponent,
-    MainsliderComponent
-    
+    MainsliderComponent,
   ],
   imports: [
     CommonModule,
@@ -35,7 +34,7 @@ register()
     SeemorePipe,
     CategorysliderComponent,
     FlashsalesaliderComponent,
-    MainsliderComponent
-  ]
+    MainsliderComponent,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

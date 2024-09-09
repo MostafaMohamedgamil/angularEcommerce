@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AllproductService } from '../allproduct.service';
+import { AllproductService } from '../shared/services/allproduct.service';
 
 @Component({
   selector: 'app-allproducts',

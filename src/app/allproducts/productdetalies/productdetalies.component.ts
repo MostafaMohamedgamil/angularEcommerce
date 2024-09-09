@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AllproductService } from '../../allproduct.service';
+import { AllproductService } from '../../shared/services/allproduct.service';
 
 
 import Swiper from 'swiper';

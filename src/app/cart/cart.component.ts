@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CartService } from '../cart.service';
+import { CartService } from '../shared/services/cart.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

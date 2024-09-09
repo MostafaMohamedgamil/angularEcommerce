@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { AllproductService } from '../../allproduct.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { AllproductService } from '../../services/allproduct.service';
 
 @Component({
   selector: 'app-flashsalesalider',
   templateUrl: './flashsalesalider.component.html',
-  styleUrl: './flashsalesalider.component.scss'
+  styleUrl: './flashsalesalider.component.scss',
 })
 export class FlashsalesaliderComponent {
-
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -19,35 +18,31 @@ export class FlashsalesaliderComponent {
     navText: ['', ''],
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       400: {
-        items: 2
+        items: 2,
       },
       740: {
-        items: 3
+        items: 3,
       },
       940: {
-        items: 4
-      }
+        items: 4,
+      },
     },
-    nav: true
-  }
+    nav: true,
+  };
 
-  allproduct: any[] = []
+  allproduct: any[] = [];
   constructor(private _AllproductService: AllproductService) {
-
     _AllproductService.getAllProducts().subscribe({
       next: (res) => {
         console.log(`res.data`, res.data);
-        this.allproduct = res.data.slice(5,10)
+        this.allproduct = res.data.slice(5, 10);
       },
       error: (err) => {
-        console.log("err", err.data);
-
-      }
-    })
-
+        console.log('err', err.data);
+      },
+    });
   }
-
 }

@@ -1,30 +1,28 @@
 import { Component } from '@angular/core';
-import { AllproductService } from '../allproduct.service';
+import { AllproductService } from '../shared/services/allproduct.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-
-
   days: number = 3;
   hours: number = 23;
   minutes: number = 19;
   seconds: number = 56;
 
-  allproduct: any[] = []
+  allproduct: any[] = [];
   constructor(private _AllProduct: AllproductService) {
     _AllProduct.getAllProducts().subscribe({
       next: (res) => {
-        console.log("res", res.data);
+        console.log('res', res.data);
         this.allproduct = res.data;
       },
       error: (err) => {
         console.log(`err`, err);
-      }
-    })
+      },
+    });
   }
 
   ngOnInit(): void {
@@ -44,5 +42,4 @@ export class HomeComponent {
       }
     }, 1000);
   }
-
 }
