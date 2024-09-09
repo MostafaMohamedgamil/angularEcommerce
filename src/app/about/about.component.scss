@@ -1,0 +1,96 @@
+body{
+    overflow-x: hidden;
+}
+
+.ourStory {
+    font-size: 54px;
+    font-weight: 600;
+    line-height: 64px;
+    letter-spacing: 0.06em;
+
+}
+
+.ourContent{
+    // font-family: Poppins;
+font-size: 16px;
+font-weight: 400;
+line-height: 26px;
+text-align: left;
+width: 525px;
+height: 130px;
+
+
+}
+
+.someIcon {
+    width: fit-content;
+    padding: 38px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.someIcon i {
+    font-size: 39px;
+}
+
+.iconCol {
+    width: fit-content;
+    border: 8px gray solid !important;
+    border-radius: 50% !important;
+
+}
+
+.salary {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0.04em;
+    text-align: center;
+
+}
+
+.salaryIcon {
+    border: 2px solid gray;
+    padding: 25px;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.salaryIcon:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+.salaryIcon:hover .iconCol {
+    border-color:rgba(255, 255, 255, 0.955) !important;
+}
+
+.salaryCont {
+
+    font-size: 16px;
+    font-weight: 400;
+
+
+}
+
+.test {
+    background-color: #F5F5F5;
+}
+
+.imagePerson{
+    background-color: #F5F5F5;
+    padding: 40px;
+    padding-bottom: 0;
+    width: 370px;
+height: 430px;
+padding: 38px 22px 0px 22px;
+gap: 0px;
+border-radius: 4px 0px 0px 0px;
+opacity: 0px;
+
+}

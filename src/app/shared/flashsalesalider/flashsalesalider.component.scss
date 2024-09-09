@@ -1,0 +1,62 @@
+.class {
+    background-color: #F5F5F5;
+}
+
+h4 {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+}
+
+.mainText {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+}
+
+.text-decoration-line-through {
+    color: gray !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+}
+
+.stars i {
+    color: #FFAD33;
+    font-size: 20px;
+}
+
+.btn-text {
+    //styleName: Title/16PX Medium;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+    text-align: left !important;
+
+}
+
+.img {
+    transition: 0.5s all !important;
+}
+
+.icons {
+    right: 0;
+    opacity: 0;
+}
+
+.img:hover .zorar {
+    overflow: visible !important;
+    transform: translateY(-100%) !important;
+    transition: 0.5s transform !important;
+}
+
+.img:hover .icons {
+    opacity: 1;
+    transition: 0.5s opacity !important;
+}
+
+
+i {
+    font-size: 25px;
+}

@@ -1,0 +1,17 @@
+<p>allproducts works!</p>
+<div class="container">
+    <div class="row">
+<div>
+    <input [(ngModel)]="searchTerm" type="text" placeholder="Search By Name" class="form-control w-75 mx-auto my-4">
+
+</div>
+        <div class="col-lg-3" *ngFor="let item of Products| search :searchTerm">
+            <app-card [productss]="item"></app-card>
+        </div>
+    </div>
+</div>
+
+
+
+
+

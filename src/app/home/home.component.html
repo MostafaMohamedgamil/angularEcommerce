@@ -1,0 +1,261 @@
+<div class="container">
+    <app-mainslider></app-mainslider>
+
+
+    <div class="flashSales">
+
+
+        <div class="upDev d-flex align-items-center">
+            <span class="rounded position-absolute mainColor"></span>
+            <p class="mainText ms-4 mt-3 ">Today's</p>
+        </div>
+
+        <div class="d-flex align-items-center mb-2">
+            <h2 class="flashSales">Flash Sales</h2>
+
+            <div class="countdown d-flex m-auto gap-4">
+
+                <div class="days">
+                    <p role="h2" class="countdown-label mb-0 d-block fw-medium">Days </p>
+                    <h2 role="h2" class="countdown-value fw-bold">{{ days }} <span>:</span> </h2>
+
+                </div>
+
+                <div class="hours">
+                    <p role="h2" class="countdown-label mb-0 fw-medium">Hours</p>
+                    <h2 role="h2" class="countdown-value fw-bold">{{ hours }} <span>:</span></h2>
+
+                </div>
+
+                <div class="min">
+                    <p role="h2" class="countdown-label mb-0 fw-medium">Minutes</p>
+                    <h2 role="h2" class="countdown-value fw-bold">{{ minutes }} <span>:</span></h2>
+                </div>
+
+                <div class="sec">
+                    <p class="countdown-label mb-0 fw-medium">Seconds</p>
+                    <h2 role="h2" class="countdown-value fw-bold">{{ seconds }}</h2>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div>
+            <div class="row">
+                <app-flashsalesalider></app-flashsalesalider>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-around">
+            <a title="button used to navigate user to all product " role="button"
+                class="btn mainColor text-white btn-product mt-3" routerLink="/allproducts">View All Products</a>
+
+        </div>
+    </div>
+
+    <hr class="mt-5 mb-5">
+    <!-- categorySlider -->
+    <div class="categorySlider">
+
+
+        <div class="upDev d-flex align-items-center">
+            <span class="rounded position-absolute mainColor"></span>
+            <p class="mainText ms-4 mt-3 mb-3 ">Category</p>
+        </div>
+
+        <div class="d-flex align-items-center mb-2">
+            <h2 class="flashSales">Browse By Category</h2>
+
+        </div>
+
+        <app-categoryslider></app-categoryslider>
+
+
+    </div>
+
+    <hr class="mt-5 mb-5">
+
+    <div class="bestSelling">
+        <div class="upDev d-flex align-items-center">
+            <span class="rounded position-absolute mainColor"></span>
+            <p class="mainText ms-4 mt-3 mb-3">This Month</p>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <h2 class="flashSales  ">Best Selling Products</h2>
+            <div class="d-flex justify-content-around">
+                <a title="button used to navigate user to all product " role="button"
+                    class="btn mainColor text-white btn-product mt-3" routerLink="/allproducts">View All Products</a>
+
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <app-flashsalesalider></app-flashsalesalider>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="enhance bg-black">
+        <div class="container">
+            <div class="row align-items-center allContent">
+                <div class="col-md-6 ">
+                    <p class="categories text-success">Categories</p>
+                    <h2 class="enhance-text text-white">Enhance Your Music Experience</h2>
+                    <div class="time d-flex gap-2 mt-4 mb-4">
+                        <div class="d-flex flex-column align-items-center bg-white text-black rounded-5 p-3">
+                            <span class="element-fit-content elementUP ">23</span>
+                            <span class="element-fit-content elementDown">Hours</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center bg-white text-black rounded-5 p-3  ">
+                            <span class="element-fit-content elementUP ">23</span>
+                            <span class="element-fit-content elementDown">Hours</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center bg-white text-black rounded-5 p-3  ">
+                            <span class="element-fit-content elementUP ">23</span>
+                            <span class="element-fit-content elementDown">Hours</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center bg-white text-black rounded-5 p-3  ">
+                            <span class="element-fit-content elementUP ">23</span>
+                            <span class="element-fit-content elementDown">Hours</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-success">Buy Now</button>
+                </div>
+                <div class="col-md-6">
+                    <img src="../../assets/1678302803182-3-removebg-preview.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="Our-Products">
+
+
+        <div class="upDev d-flex align-items-center">
+            <span class="rounded position-absolute mainColor"></span>
+            <p class="mainText ms-4 mt-3 mb-3 ">Category</p>
+        </div>
+
+        <div class="d-flex align-items-center mb-2">
+            <h2 class="flashSales">Explore Our Products</h2>
+
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3" *ngFor="let item of allproduct.slice(8,16)">
+                    <app-card [productss]="item"></app-card>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="Featured">
+        <div class="upDev d-flex align-items-center">
+            <span class="rounded position-absolute mainColor"></span>
+            <p class="mainText ms-4 mt-3 mb-3 ">Category</p>
+        </div>
+
+        <div class="d-flex align-items-center mb-2">
+            <h2 class="flashSales">Explore Our Products</h2>
+
+        </div>
+
+
+
+
+        <div class="row">
+            <div class=" col-md-6 bg-black h-100 position-relative">
+                <img class="psimg " src="../../assets/Ps5.png" alt="">
+                <div class="colPS position-absolute text-white bottom-0 mb-5">
+                    <span class="PlayStation">PlayStation 5</span>
+                    <p class="afterPS">Black and White version of the PS5 coming out on sale</p>
+                    <span class="fw-bold shop border-1 border-secondary solid">Shop Now</span>
+                </div>
+            </div>
+            <div class="col-md-6 ">
+
+                <div class="ms-2">
+                    <img class="w-100 womanImg bg-black bottom-0" src="../../assets/woman.png" alt="">
+
+
+
+                    <div class="ph d-flex justify-content-between gap-2">
+                        <div class="perfumImgContent bg-black d-flex justify-content-center align-items-center">
+                            <img class="w-100 perfumImg " src="../../assets/perfum.png" alt="">
+
+                        </div>
+                        <div class="perfumImgContent bg-black d-flex justify-content-center align-items-center">
+                            <img class="w-100 perfumImg " src="../../assets/speakers.png" alt="">
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="m-lg-5">
+
+        <div class="row ">
+
+
+            <div class="col-md-4 p-0  ">
+                <div class="iconCol bg-secondary m-auto mb-3">
+                    <div class="someIcon bg-black border-1 border-secondary  ">
+                        <i class="ri-truck-line text-white"></i>
+                    </div>
+                </div>
+                <h4 class="free text-center mb-2">FREE AND FAST DELIVERY</h4>
+                <p class="freee text-center">free delivery for all orders over $140</p>
+            </div>
+            <div class="col-md-4 p-0  ">
+                <div class="iconCol bg-secondary m-auto mb-3">
+                    <div class="someIcon bg-black border-1 border-secondary  ">
+                        <i class="ri-customer-service-line text-white"></i>
+                    </div>
+                </div>
+                <h4 class="free text-center mb-2">24/7 CUSTOMER SERVICE</h4>
+                <p class="freee text-center">Friendly 24/7 customer support</p>
+            </div>
+            <div class="col-md-4 p-0  ">
+                <div class="iconCol bg-secondary m-auto mb-3">
+                    <div class="someIcon bg-black border-1 border-secondary  ">
+                        <i class="ri-git-repository-private-line text-white"></i>
+                    </div>
+                </div>
+                <h4 class="free text-center mb-2">MONEY BACK GUARANTEE</h4>
+                <p class="freee text-center">We reurn money within 30 days</p>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</div>

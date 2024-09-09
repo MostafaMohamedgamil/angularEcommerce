@@ -1,0 +1,211 @@
+span {
+    width: 20px;
+    height: 40px;
+    // background-color: red;
+
+}
+
+.mainText {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 20px !important;
+}
+
+.flashSales {
+    font-family: "Inter", sans-serif !important;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: 0.04em;
+    text-align: left;
+
+
+}
+
+.countdown-value {
+    font-family: "Inter", sans-serif !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    line-height: 30px !important;
+}
+
+.countdown-label {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+}
+
+.text-success {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: left;
+
+}
+
+.allContent {
+    margin-left: 150px;
+}
+
+.enhance-text {
+    //styleName: Heading/48PX SemiBold;
+    font-family: "Inter", sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 60px;
+    letter-spacing: 0.04em;
+    text-align: left;
+
+}
+
+.element-fit-content {
+    width: fit-content;
+    height: fit-content;
+}
+
+.elementUP {
+    //styleName: Title/16PX Semibold;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: left;
+
+}
+
+.elementDown {
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+
+}
+
+.btn-product {
+    padding: 16px 48px 16px 48px;
+}
+
+.PlayStation {
+    //styleName: Heading/24PX SemiBold;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    text-align: left;
+
+}
+
+.psimg {
+    width: 570px;
+    height: 600px;
+    gap: 0px;
+    border-radius: 4px 0px 0px 0px;
+
+
+}
+
+.womanImg {
+    transform: scaleX(-1);
+    height: 284px;
+}
+
+.perfumImgContent {
+    width: 270px !important;
+    height: 284px;
+    border-radius: 4px 0px 0px 0px;
+    // transform: ;
+
+}
+
+.perfumImgContent .perfumImg {
+    width: 190px;
+    // height: 221px;
+    // left: 10px;
+    // gap: 0px;
+    // opacity: 0px;
+
+}
+
+.afterPS {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+
+}
+
+.colPS {
+    width: 242px;
+    height: 82px;
+    gap: 16px;
+
+}
+
+.colPS button {
+    //styleName: Title/16PX Medium;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+
+}
+
+.shop {
+    border-bottom: 10px red solid;
+}
+
+.ms-2 {
+    margin-left: 3rem !important;
+}
+
+.ph {
+    margin-top: 32px;
+
+}
+
+.someIcon {
+    width: fit-content;
+    padding: 38px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.someIcon i {
+    font-size: 39px;
+}
+
+.iconCol {
+    // border: 80px red solid !important;
+    width: fit-content;
+    border: 8px gray solid !important;
+    border-radius: 50% !important;
+
+}
+
+.free {
+    //styleName: Title/20PX Semibold;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    text-align: left;
+
+}
+
+.freee {
+    //styleName: Title/14PX Regular;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+
+}

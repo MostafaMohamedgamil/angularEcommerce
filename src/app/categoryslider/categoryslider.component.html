@@ -1,0 +1,7 @@
+<swiper-container slides-per-view="6"  loop="true">
+    <swiper-slide class="m-2" *ngFor="let cat of allCategory">
+        <img class="image rounded" [src]="cat?.image" alt="">
+        <h3 class="imageDetalis fw-semibold">{{cat.name}}</h3>
+    </swiper-slide>
+
+</swiper-container>

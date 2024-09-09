@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="w-75 mx-auto py-4">
+        <h4>Rgister Now</h4>
+        <form [formGroup]="registerForm">
+
+        </form>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row align-items-center justify-content-center g-5">
+        <div class="col-md-8">
+            <img src="../../assets/signUp.jpg" alt="" class="">
+        </div>
+        <div class="col-md-4">
+            <div *ngIf="apiError" class="alert alert-danger">{{apiError}}</div>
+            <h2>Create an account</h2>
+            <p class="fw-normal">Enter your detalis below</p>
+
+            <form (ngSubmit)="handelSubmit(registerForm)" [formGroup]="registerForm">
+
+
+                <input formControlName="name" type="text " class="form-control no-border rounded-0 mb-3"
+                    placeholder="Name">
+                <div *ngIf="registerForm.get('name')?.errors && registerForm.get('name')?.touched"
+                    class="alert alert-danger">
+                    <p *ngIf="registerForm.get('name')?.getError('minlength')" class='m-0'>Name minLength is 3 char</p>
+                    <p *ngIf="registerForm.get('name')?.getError('maxlength')" class="m-0 ">Name maxLength is 16 char
+                    </p>
+                    <p *ngIf="registerForm.get('name')?.getError('required')" class="m-0 ">Name is Required</p>
+                </div>
+
+                <input formControlName="email" type="email " class="form-control no-border rounded-0 mb-3"
+                    placeholder="Email">
+                <div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched"
+                    class="alert alert-danger">
+                    <p *ngIf="registerForm.get('email')?.getError('email')" class='m-0'>Email inValid</p>
+                    <p *ngIf="registerForm.get('email')?.getError('required')" class="m-0 ">Email is Required</p>
+                </div>
+
+                <input formControlName="password" type="password" class="form-control no-border rounded-0 mb-3"
+                    placeholder="Password">
+                <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched"
+                    class="alert alert-danger">
+                    <p *ngIf="registerForm.get('password')?.getError('pattern')" class='m-0'>Password Must Starts with
+                        an uppercase letter Followed by 5 to 10 characters (Lowercase,Digits)</p>
+                    <p *ngIf="registerForm.get('password')?.getError('required')" class="m-0 ">password is Required</p>
+                </div>
+
+                <input formControlName="rePassword" type="password" class="form-control no-border rounded-0 mb-3"
+                    placeholder="rePassword">
+
+
+                <input formControlName="phone" type="tel " class="form-control no-border rounded-0 mb-3"
+                    placeholder="Phone">
+                <div *ngIf="registerForm.get('phone')?.errors && registerForm.get('phone')?.touched"
+                    class="alert alert-danger">
+                    <p *ngIf="registerForm.get('phone')?.getError('pattern')" class='m-0'>Phone must be an Egyptian
+                        number</p>
+                    <p *ngIf="registerForm.get('phone')?.getError('required')" class="m-0 ">phone is Required</p>
+                </div>
+
+
+                <!-- <input formControlName="rePassword" type="password " class="form-control no-border rounded-0 mb-2" placeholder="rePassword"> -->
+                <!-- <button class="btn bg-danger text-white">Create Account</button> -->
+                <button [disabled]="registerForm.invalid" type="submit" class="btn btn-color text-white p-3 w-100 mb-2">
+                    <i *ngIf="isLoadind" class="fas fa-spinner fa-spin spinner"></i>
+                    <span *ngIf="!isLoadind"> Create Account</span>
+                </button>
+
+                <div class="m-auto">
+                    <p>Already have account? <span class="fw-bold">
+                        <a routerLink="/login">Log in</a>
+                    </span></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
