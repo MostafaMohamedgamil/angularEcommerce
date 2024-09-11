@@ -1,13 +1,27 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { count, Observable } from 'rxjs';
+import { BehaviorSubject, count, Observable } from 'rxjs';
+import { environment } from './../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  constructor(private _HttpClient: HttpClient) { }
+  numOfCartItems = new BehaviorSubject(0)
+  constructor(private _HttpClient: HttpClient) {
+    this.getLoggedUserCart().subscribe({
+      next: (res) => {
+        // numOfCartItems
+        this.numOfCartItems.next(res.numOfCartItems)
+        console.log(res);
+      },
+      error: (err) => {
+        console.log(err);
+
+      }
+    })
+  }
 
   ngOnInit(): void {
 
@@ -20,7 +34,8 @@ export class CartService {
   }
 
   addToCart(productId: string): Observable<any> {
-    return this._HttpClient.post(`https://ecommerce.routemisr.com/api/v1/cart`,
+    const BASE_URL = environment.BASE_URL;
+    return this._HttpClient.post(BASE_URL + `cart`,
       { productId: productId },
       {
         headers: this.headers,
@@ -29,7 +44,8 @@ export class CartService {
   }
 
   getLoggedUserCart(): Observable<any> {
-    return this._HttpClient.get(`https://ecommerce.routemisr.com/api/v1/cart`,
+    const BASE_URL = environment.BASE_URL + "cart"
+    return this._HttpClient.get(BASE_URL,
       {
         headers: this.headers,
       }
@@ -37,15 +53,18 @@ export class CartService {
   }
 
   removeCartItem(productId: string): Observable<any> {
-    return this._HttpClient.delete(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`,
+    const BASE_URL = environment.BASE_URL + "cart"
+
+    return this._HttpClient.delete(BASE_URL + '/' + productId,
       {
         headers: this.headers,
       }
     )
   }
 
-  upDateItemount(productId: string, count: number ): Observable<any> {
-    return this._HttpClient.put(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`, {
+  upDateItemount(productId: string, count: number): Observable<any> {
+    const BASE_URL = environment.BASE_URL + "cart"
+    return this._HttpClient.put(BASE_URL + '/' + productId, {
       count: count
     },
       {
@@ -54,5 +73,17 @@ export class CartService {
     )
   }
 
+
+  onlinePayment(shippingAddress: any, cartId: string) {
+    return this._HttpClient.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=http://localhost:4200`,
+      {
+        shippingAddress: shippingAddress
+      },
+      {
+        headers: this.headers
+      }
+    )
+
+  }
 
 }

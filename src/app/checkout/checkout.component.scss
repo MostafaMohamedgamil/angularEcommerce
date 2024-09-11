@@ -1,0 +1,52 @@
+.billing {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0.04em;
+    text-align: left;
+
+}
+
+input {
+    background-color: #F5F5F5;
+}
+
+label {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+
+}
+
+.radio-button {
+    display: flex;
+    align-items: center;
+}
+
+.radio-button input[type="radio"] {
+    margin-right: 10px;
+    /* Add space between radio button and label */
+}
+
+.radio-button label {
+    font-size: 16px;
+}
+
+.copon {
+    width: 300px;
+    padding: 16px 22px
+}
+
+.coponBtn {
+    width: 211px;
+    padding: 16px 22px
+}

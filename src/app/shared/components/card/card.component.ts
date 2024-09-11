@@ -14,6 +14,7 @@ export class CardComponent {
   addToCart(productId: string) {
     this._CartService.addToCart(productId).subscribe({
       next: (res) => {
+        this._CartService.numOfCartItems.next(res.numOfCartItems)
         console.log('cart res', res);
       },
       error: (err) => {

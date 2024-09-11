@@ -25,6 +25,9 @@
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="bg-main rounded-5" routerLink="brands">Brands</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="bg-main rounded-5" routerLink="contact">Contact</a>
+        </li>
 
 
       </ul>
@@ -34,25 +37,30 @@
       <ul *ngIf="islogin" class="navbar-nav ms-auto  mb-2 mb-lg-0 d-flex gap-3">
         <div class="d-flex gap-3  justify-content-center align-items-center">
           <!-- Cart -->
-          <li class="nav-item">
+          <li class="nav-item position-relative">
             <a class="text-black" href="">
               <i class="ri-shopping-cart-line"></i>
             </a>
+            <!-- 8px -->
+            <span
+              class="detailsNumber bg-danger text-white position-absolute top-0 end-0 d-flex justify-content-center align-items-center ">{{cartNumber}}</span>
           </li>
           <!-- Wishlist -->
-          <li class="nav-item ">
+          <li class="nav-item position-relative">
             <a class="text-black heart-line" href="">
               <i class="ri-heart-line"></i>
             </a>
+            <span
+              class="detailsNumber bg-danger text-white position-absolute top-0 end-0 d-flex justify-content-center align-items-center ">1</span>
+
           </li>
         </div>
 
         <!-- Manage Account -->
         <div class="btn-group me-5" dropdown>
-          <button id="button-basic" dropdownToggle type="button" class="btn btn-color rounded-5"
-            aria-controls="dropdown-basic">
+          <button id="button-basic" dropdownToggle type="button" class="btn ps-0 rounded-5" aria-controls="dropdown-basic">
 
-            <i class="ri-user-line text-white"></i>
+            <i class="ri-user-line text-black"></i>
             <span class="caret"></span>
 
           </button>

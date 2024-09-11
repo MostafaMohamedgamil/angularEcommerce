@@ -51,7 +51,7 @@ export class CartComponent {
     this._CartService.getLoggedUserCart().subscribe({
       next: (res) => {
         this.cartDetails = res.data
-        console.log(res);
+        console.log("cartId",res);
 
       },
       error: (err) => {

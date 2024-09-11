@@ -11,6 +11,10 @@ span {
     line-height: 20px !important;
 }
 
+.categories {
+    color: #00FF66
+}
+
 .flashSales {
     font-family: "Inter", sans-serif !important;
     font-size: 36px;
@@ -49,7 +53,6 @@ span {
 }
 
 .enhance-text {
-    //styleName: Heading/48PX SemiBold;
     font-family: "Inter", sans-serif;
     font-size: 48px;
     font-weight: 600;
@@ -208,4 +211,19 @@ span {
     font-weight: 400;
     line-height: 21px;
 
+}
+
+.circlee {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+}
+
+.marginTop {
+    margin-top: 60px;
+}
+
+.buyNow {
+    background-color: #00FF66;
+    padding: 17px 54px;
 }

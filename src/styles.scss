@@ -14,6 +14,11 @@ img {
 body {
     font-family: "Inter", sans-serif;
 }
+.poppinsFont
+{
+    font-family: "Poppins", sans-serif;
+
+}
 
 li {
     list-style: none;
@@ -59,50 +64,3 @@ a {
     margin-top: 119px ;
     margin-bottom: 119px ;
 }
-
-// .rating-color {
-//     color: var(--rating-color);
-// }
-
-// .cursor-pointer {
-//     cursor: pointer;
-// }
-
-// a,
-// a:hover {
-//     color: black;
-//     text-decoration: none;
-// }
-
-// .product:hover {
-//     box-shadow: var(--shadow);
-//     border: solid 1px var(--main-color);
-// }
-
-// .product .btn {
-//     transition: transform 1s, opacity 1s;
-//     transform: translateY(100%);
-//     opacity: 0;
-// }
-
-// .product:hover .btn {
-//     opacity: 1;
-//     transform: translateY(0%);
-
-// }
-
-// .font-sm {
-//     font-size: 14px;
-// }
-
-// .text-main {
-//     color: var(--main-color);
-// }
-
-// .bg-main {
-//     background-color: var(--main-color) !important;
-// }
-
-// .bg-main-light {
-//     background-color: var(--light-color) !important;
-// }
