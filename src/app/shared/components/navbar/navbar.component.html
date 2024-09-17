@@ -1,6 +1,15 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<div class="bg-black text-white d-flex justify-content-center align-items-center">
+  <p class="upNav poppinsFont fw-normal p-3 text-center m-0">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
+  <p class="fw-semibold border-bottom m-0">ShopNow</p>
+</div>
+
+<nav class="navbar navbar-expand-lg bg-transparent border-bottom border-1 border-secondary">
   <div class="container">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand " href="#">
+      <h2 class="fw-bold">
+        Exclusive
+      </h2>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,26 +17,25 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul *ngIf="islogin" class="navbar-nav m-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLinkActive="bg-main rounded-5" routerLink="home">Home</a>
+          <a  role="heading" aria-level="4" class="nav-link fw-normal " aria-current="page" routerLinkActive="bg-main rounded-5" routerLink="home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="bg-main rounded-5" routerLink="about">About</a>
+          <a  role="heading" aria-level="4" class="nav-link fw-normal" routerLinkActive="bg-main rounded-5" routerLink="contact">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="bg-main rounded-5" routerLink="categories">Categories</a>
+          <a  role="heading" aria-level="4" class="nav-link fw-normal" routerLinkActive="bg-main rounded-5" routerLink="about-us">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="bg-main rounded-5" routerLink="cart">Cart</a>
+          <a  role="heading" aria-level="4" class="nav-link fw-normal" routerLinkActive="bg-main rounded-5" routerLink="cart">Cart</a>
         </li>
+        <!--         
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="bg-main rounded-5" routerLink="Wishlist">Wishlist</a>
-        </li>
-        <li class="nav-item">
+
           <a class="nav-link" routerLinkActive="bg-main rounded-5" routerLink="brands">Brands</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="bg-main rounded-5" routerLink="contact">Contact</a>
-        </li>
+        </li> -->
 
 
       </ul>
@@ -39,7 +47,7 @@
           <!-- Cart -->
           <li class="nav-item position-relative">
             <a class="text-black" routerLink="cart">
-              <i  class="ri-shopping-cart-line"></i>
+              <i class="ri-shopping-cart-line"></i>
             </a>
             <!-- 8px -->
             <span
@@ -58,7 +66,8 @@
 
         <!-- Manage Account -->
         <div class="btn-group me-5" dropdown>
-          <button id="button-basic" dropdownToggle type="button" class="btn ps-0 rounded-5" aria-controls="dropdown-basic">
+          <button id="button-basic" dropdownToggle type="button" class="btn ps-0 rounded-5"
+            aria-controls="dropdown-basic">
 
             <i class="ri-user-line text-black"></i>
             <span class="caret"></span>

@@ -1,6 +1,6 @@
 <div class="container">
     <div class="w-75 mx-auto py-4">
-        <h4>Rgister Now</h4>
+        <!-- <h4>Rgister Now</h4> -->
         <form [formGroup]="loginForm">
 
         </form>
@@ -8,12 +8,12 @@
 </div>
 
 
-<div class="container">
+<div class="container ms-0 toMarginTopBottom">
     <div class="row align-items-center justify-content-center g-5">
-        <div class="col-md-8">
+        <div class="d-none d-lg-block col-lg-8 ps-0">
             <img src="../../assets/signUp.jpg" alt="" class="">
         </div>
-        <div class="col-md-4">
+        <div class=" col-lg-4 col-md-6">
             <div *ngIf="apiError" class="alert alert-danger">{{apiError}}</div>
             <h2>Create an account</h2>
             <p class="fw-normal">Enter your detalis below</p>

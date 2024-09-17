@@ -1,3 +1,36 @@
+// import { Component, OnInit } from '@angular/core';
+// import { register } from 'swiper/element/bundle';
+// import { AllproductService } from '../shared/services/allproduct.service';
+// register();
+
+// @Component({
+//   selector: 'app-categoryslider',
+//   templateUrl: './categoryslider.component.html',
+//   styleUrl: './categoryslider.component.scss'
+// })
+// export class CategorysliderComponent {
+
+//   allCategory: any
+// constructor(private _AllCategory: AllproductService) {
+// }
+// ngOnInit(): void {
+//   this.getAllcategory();
+// }
+
+// getAllcategory(): any {
+//   this._AllCategory.getAllCategories().subscribe({
+//     next: (res) => {
+//       console.log("rescat", res.data);
+//       this.allCategory = res.data;
+//     },
+//     error: (err) => {
+//       console.log('err', err);
+//     }
+
+//   })
+// }
+// }
+
 import { Component, OnInit } from '@angular/core';
 import { register } from 'swiper/element/bundle';
 import { AllproductService } from '../shared/services/allproduct.service';
@@ -6,27 +39,46 @@ register();
 @Component({
   selector: 'app-categoryslider',
   templateUrl: './categoryslider.component.html',
-  styleUrl: './categoryslider.component.scss'
+  styleUrls: ['./categoryslider.component.scss']
 })
-export class CategorysliderComponent {
+export class CategorysliderComponent implements OnInit {
 
-  allCategory: any
-constructor(private _AllCategory: AllproductService) {
-}
-ngOnInit(): void {
-  this.getAllcategory();
-}
+  allCategory: any;
+  slidesPerView: number=1;
 
-getAllcategory(): any {
-  this._AllCategory.getAllCategories().subscribe({
-    next: (res) => {
-      console.log("rescat", res.data);
-      this.allCategory = res.data;
-    },
-    error: (err) => {
-      console.log('err', err);
+  constructor(private _AllCategory: AllproductService) {}
+
+  ngOnInit(): void {
+    this.getAllcategory();
+    this.updateSlidesPerView();
+    window.addEventListener('resize', this.updateSlidesPerView.bind(this));
+  }
+
+  getAllcategory(): any {
+    this._AllCategory.getAllCategories().subscribe({
+      next: (res) => {
+        console.log("rescat", res.data);
+        this.allCategory = res.data;
+      },
+      error: (err) => {
+        console.log('err', err);
+      }
+    });
+  }
+
+  updateSlidesPerView(): void {
+    const width = window.innerWidth;
+    if (width >= 1200) {
+      this.slidesPerView = 6;
+    } else if (width >= 992) {
+      this.slidesPerView = 4;
+    } else if (width >= 768) {
+      this.slidesPerView = 3;
+    } else if (width >= 576) {
+      this.slidesPerView = 2;
+    } else {
+      this.slidesPerView = 1;
     }
+  }
+}
 
-  })
-}
-}

@@ -61,6 +61,18 @@ const routes: Routes = [
     loadChildren: () =>
       import('./account/account.module').then((m) => m.AccountModule),
   },
+  {
+    path: 'login',
+    // canActivate: [authguardGuard],
+    loadChildren: () =>
+      import('./login/login.module').then((m) => m.LoginModule),
+  },
+  {
+    path: 'signup',
+    // canActivate: [authguardGuard],
+    loadChildren: () =>
+      import('./signup/signup.module').then((m) => m.SignupModule),
+  },
 
   // { path: 'Wishlist',canActivate:[authguardGuard], component: WishlistComponent },
   // { path: 'productdetalies/:id',canActivate:[authguardGuard], component: ProductdetaliesComponent },
