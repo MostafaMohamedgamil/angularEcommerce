@@ -10,7 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class CheckoutComponent {
   cartDetails: any = null;
 
-  constructor(private _CartService: CartService) {}
+  constructor(private _CartService: CartService) { }
 
   ngOnInit(): void {
     this._CartService.getLoggedUserCart().subscribe({
@@ -28,22 +28,35 @@ export class CheckoutComponent {
     details: new FormControl(null, Validators.required),
     phone: new FormControl(null, Validators.required),
     city: new FormControl(null, Validators.required),
+    payment: new FormControl(null, Validators.required)
   });
+
+  navigateToPage(url: string) {
+    window.location.href = url
+  }
+
 
   handelSubmit() {
     if (this.form.invalid) {
       return console.log('invalid form');
     }
+    console.log(this.form.value);
     // return console.log(shippingAddress.value);
-    this._CartService
-      .onlinePayment(this.form.value, '66d6dc14832c8800a83eaee9')
-      .subscribe({
-        next: (res: any) => {
-          console.log('res.session.url', res.session.url);
-        },
-        error: (err) => {
-          console.log(err);
-        },
-      });
+    if (this.form.value.payment == 'bank') {
+      this._CartService
+        .onlinePayment(this.form.value, '66d6dc14832c8800a83eaee9')
+        .subscribe({
+          next: (res: any) => {
+            this.navigateToPage(res.session.url)
+            console.log('res.session.url', res.session.url);
+          },
+          error: (err) => {
+            console.log(err);
+          },
+        });
+    }
+else{
+  
+}
   }
 }

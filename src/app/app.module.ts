@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { AllorderComponent } from './allorder/allorder.component';
 // import { ContactComponent } from './contact/contact.component';
 // import { CheckoutComponent } from './checkout/checkout.component';
 
@@ -20,6 +21,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
     AppComponent,
     FooterComponent,
     NavbarComponent,
+    // AllorderComponent,
     // ContactComponent,
     // CheckoutComponent,
   ],

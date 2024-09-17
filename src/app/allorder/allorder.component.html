@@ -1,0 +1,43 @@
+<div class="container">
+    <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <th scope="col">- Order Id</th>
+                <th scope="col">Total Price:</th>
+                <th scope="col">Payment Method </th>
+                <th scope="col">is paid</th>
+                <th>Delivered To</th>
+            </tr>
+    
+        </thead>
+        <tbody *ngFor="let order of orders">
+            <tr>
+                <td>{{ order.id }}</td>
+                <td><i class="fa-solid fa-sack-dollar text-main"></i> {{ order.totalOrderPrice + ' EGP' }}</td>
+                <td>
+                    <span class="fw-bolder">
+                        <i [ngClass]="order.paymentMethodType === 'cash' ? 'fa-solid fa-money-bill' : 'fa-brands fa-cc-visa'"
+                            class="text-main"></i>
+                        {{ order.paymentMethodType }}
+                    </span>
+                </td>
+                <td>
+                    <span class="fw-bolder">
+                        <i [ngClass]="order.isPaid ? 'ri-arrow-right-up-line' : 'ri-close-line'"
+                            [ngClass]="{ 'text-main': order.isPaid, 'text-danger': !order.isPaid }"></i>
+                        {{ order.isPaid ? 'Yes' : 'No' }}
+                    </span>
+                </td>
+                <td>
+                    <span class="fw-bolder">
+                        <i [ngClass]="order.isDelivered ? 'ri-arrow-right-up-line' : 'ri-close-line'"
+                            [ngClass]="{ 'text-main': order.isDelivered, 'text-danger': !order.isDelivered }"></i>
+                        {{ order.isDelivered ? 'Yes' : 'Not Yet' }}
+                    </span>
+                </td>
+            </tr>
+    
+        </tbody>
+    </table>
+</div>

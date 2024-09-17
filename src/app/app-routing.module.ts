@@ -13,6 +13,11 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'allorders',
+    canActivate: [authguardGuard],
+    loadChildren: () => import('./allorder/allorder.module').then((m) => m.AllorderModule),
+  },
+  {
     path: 'about-us',
     canActivate: [authguardGuard],
     loadChildren: () =>

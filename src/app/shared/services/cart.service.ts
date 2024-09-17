@@ -14,6 +14,7 @@ export class CartService {
         // numOfCartItems
         this.numOfCartItems.next(res.numOfCartItems);
         console.log(res);
+        localStorage.setItem('UserId', res.data.cartOwner)
       },
       error: (err) => {
         console.log(err);
