@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CartService } from './../shared/services/cart.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-checkout',
@@ -25,12 +25,15 @@ export class CheckoutComponent {
   }
 
   form: FormGroup = new FormGroup({
-    details: new FormControl(null),
-    phone: new FormControl(null),
-    city: new FormControl(null),
+    details: new FormControl(null, Validators.required),
+    phone: new FormControl(null, Validators.required),
+    city: new FormControl(null, Validators.required),
   });
 
   handelSubmit() {
+    if (this.form.invalid) {
+      return console.log('invalid form');
+    }
     // return console.log(shippingAddress.value);
     this._CartService
       .onlinePayment(this.form.value, '66d6dc14832c8800a83eaee9')
