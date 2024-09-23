@@ -22,13 +22,18 @@ export class LoginComponent {
   handelLogIn(loginForm: FormGroup) {
     this.isLoadind = true;
 
+
     if (loginForm.valid) {
       //register
       this._AuthService.login(loginForm.value).subscribe({
         next: (res) => {
           console.log("res", res);
+
+
           if (res.message === "success") {
             localStorage.setItem('token', res.token);
+            // save name and email in localStorage to use it in account settings
+            localStorage.setItem('userData', JSON.stringify(res.user));
             this._AuthService.decodeUserData();
             this.isLoadind = false;
             this._Router.navigate(['/home']);

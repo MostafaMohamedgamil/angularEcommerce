@@ -30,7 +30,7 @@ export class CartService {
     token: localStorage.getItem('token'),
   };
 
-  addToCart(productId: string): Observable<any> {
+  addToCart(productId: string): Observable<any> {   
     const BASE_URL = environment.BASE_URL;
     return this._HttpClient.post(
       BASE_URL + `cart`,
@@ -40,6 +40,28 @@ export class CartService {
       }
     );
   }
+
+
+  // addToCart(productId: string): Observable<any> {
+  //   const BASE_URL = environment.BASE_URL;
+  //   return this._HttpClient.post(
+  //     BASE_URL + `cart`,
+  //     { productId: productId },
+  //     {
+  //       headers: this.headers,
+  //     }
+  //   );
+  // }
+
+
+
+
+
+
+
+
+
+
 
   getLoggedUserCart(): Observable<any> {
     const BASE_URL = environment.BASE_URL + 'cart';
@@ -79,5 +101,17 @@ export class CartService {
         headers: this.headers,
       }
     );
+  }
+
+  cashPayment(shippingAddress: any,cartId: string){
+    return this._HttpClient.post(
+      `https://ecommerce.routemisr.com/api/v1/orders/${cartId}`,
+      {
+        shippingAddress: shippingAddress,
+      },
+      {
+        headers: this.headers,
+      }
+    )
   }
 }

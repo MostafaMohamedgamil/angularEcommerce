@@ -9,7 +9,7 @@ const routes: Routes = [
 
   {
     path: 'home',
-    canActivate: [authguardGuard],
+    // canActivate: [authguardGuard],
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
@@ -78,6 +78,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./signup/signup.module').then((m) => m.SignupModule),
   },
+  
 
   // { path: 'Wishlist',canActivate:[authguardGuard], component: WishlistComponent },
   // { path: 'productdetalies/:id',canActivate:[authguardGuard], component: ProductdetaliesComponent },

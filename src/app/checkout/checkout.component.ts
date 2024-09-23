@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CartService } from './../shared/services/cart.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -9,14 +10,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CheckoutComponent {
   cartDetails: any = null;
-
-  constructor(private _CartService: CartService) { }
+  // cartId: string | null = ""
+  constructor(private _CartService: CartService,private _Router:Router) { }
 
   ngOnInit(): void {
     this._CartService.getLoggedUserCart().subscribe({
+      // next: (res,params) => {
       next: (res) => {
         this.cartDetails = res.data;
         console.log(res);
+        // this.cartId=params.get('id')
       },
       error: (err) => {
         console.log(err);
@@ -44,7 +47,7 @@ export class CheckoutComponent {
     // return console.log(shippingAddress.value);
     if (this.form.value.payment == 'bank') {
       this._CartService
-        .onlinePayment(this.form.value, '66d6dc14832c8800a83eaee9')
+        .onlinePayment(this.form.value, '66ea693d945e017d6e585af5')
         .subscribe({
           next: (res: any) => {
             this.navigateToPage(res.session.url)
@@ -55,8 +58,19 @@ export class CheckoutComponent {
           },
         });
     }
-else{
-  
-}
+    else {
+      this._CartService
+        .cashPayment(this.form.value, '66ea693d945e017d6e585af5')
+        .subscribe({
+          next: (res: any) => {
+            console.log("Cash RES", res);
+this._Router.navigate(['/home'])
+          },
+          error: (err) => {
+            console.log("Cash Err", err);
+
+          }
+        })
+    }
   }
 }

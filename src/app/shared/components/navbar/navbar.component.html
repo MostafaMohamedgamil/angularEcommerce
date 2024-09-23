@@ -1,5 +1,6 @@
 <div class="bg-black text-white d-flex justify-content-center align-items-center">
-  <p class="upNav poppinsFont fw-normal p-3 text-center m-0">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
+  <p class="upNav poppinsFont fw-normal p-3 text-center m-0">Summer Sale For All Swim Suits And Free Express Delivery -
+    OFF 50%!</p>
   <p class="fw-semibold border-bottom m-0">ShopNow</p>
 </div>
 
@@ -17,25 +18,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul *ngIf="islogin" class="navbar-nav m-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a  role="heading" aria-level="4" class="nav-link fw-normal " aria-current="page" routerLinkActive="bg-main rounded-5" routerLink="home">Home</a>
+          <a role="heading" aria-level="4" class="nav-link fw-normal " aria-current="page"
+            routerLinkActive="bg-main rounded-5" routerLink="home">Home</a>
         </li>
         <li class="nav-item">
-          <a  role="heading" aria-level="4" class="nav-link fw-normal" routerLinkActive="bg-main rounded-5" routerLink="contact">Contact</a>
+          <a role="heading" aria-level="4" class="nav-link fw-normal" routerLinkActive="bg-main rounded-5"
+            routerLink="contact">Contact</a>
         </li>
         <li class="nav-item">
-          <a  role="heading" aria-level="4" class="nav-link fw-normal" routerLinkActive="bg-main rounded-5" routerLink="about-us">About</a>
+          <a role="heading" aria-level="4" class="nav-link fw-normal" routerLinkActive="bg-main rounded-5"
+            routerLink="about-us">About</a>
         </li>
         <li class="nav-item">
-          <a  role="heading" aria-level="4" class="nav-link fw-normal" routerLinkActive="bg-main rounded-5" routerLink="cart">Cart</a>
+          <a role="heading" aria-level="4" class="nav-link fw-normal" routerLinkActive="bg-main rounded-5"
+            routerLink="cart">Cart</a>
         </li>
-        <!--         
-        <li class="nav-item">
-
-          <a class="nav-link" routerLinkActive="bg-main rounded-5" routerLink="brands">Brands</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="bg-main rounded-5" routerLink="contact">Contact</a>
-        </li> -->
 
 
       </ul>
@@ -76,18 +73,21 @@
           <ul class="" id="dropdown-basic" *dropdownMenu class="dropdown-menu trans mt-1 " role="menu"
             aria-labelledby="button-basic">
 
-            <li role="menuitem"><a class="dropdown-item d-flex gap-3" routerLink="#">
+            <li role="menuitem">
+              <a class="dropdown-item d-flex align-items-center gap-3" routerLink="account">
                 <i class="ri-user-line"></i>
                 Manage My Account
               </a>
             </li>
 
-            <li role="menuitem"><a class="dropdown-item" routerLink="#">
+            <li role="menuitem">
+              <a class="dropdown-item  d-flex align-items-center gap-3" routerLink="#">
                 <i class="ri-archive-2-line"></i>
                 My Order</a>
             </li>
 
-            <li (click)="logout()" role="menuitem"><a class="dropdown-item" routerLink="#">
+            <li (click)="logout()" role="menuitem">
+              <a class="dropdown-item  d-flex align-items-center gap-3" routerLink="#">
                 <i class="ri-logout-box-line"></i>
                 Logout</a>
             </li>

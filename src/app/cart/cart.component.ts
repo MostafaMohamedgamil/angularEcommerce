@@ -33,25 +33,24 @@ export class CartComponent {
 
   upDateItemCount(productId: string, count: number) {
     this._CartService.upDateItemount(productId, count).subscribe({
-      next:(res)=>{
+      next: (res) => {
         this.cartDetails = res.data
         this.toastr.success('Cart Updated!', 'Toastr fun!');
         console.log("remove res", res);
       },
-      error:(err)=>{
+      error: (err) => {
         console.log(err);
-        
+
       }
 
     })
   }
 
   ngOnInit(): void {
-
     this._CartService.getLoggedUserCart().subscribe({
       next: (res) => {
         this.cartDetails = res.data
-        console.log("cartId",res);
+        console.log("cartId", res);
 
       },
       error: (err) => {
@@ -61,5 +60,6 @@ export class CartComponent {
     })
 
   }
+
 
 }

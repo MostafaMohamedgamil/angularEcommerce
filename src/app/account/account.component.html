@@ -3,8 +3,15 @@
         <div class="col-md-3">
             <h4 class="fw-medium mb-3">Manage My Account</h4>
             <ul class="ms-3">
-                <li class="text-danger mb-2">My Profile</li>
-                <li class="mb-2">Address Book</li>
+                <li class="text-danger mb-2">
+                    <a routerLinkActive="text-danger" routerLink="myprofile">My Profile</a>
+                </li>
+                <li class="text-danger mb-2">
+                    <a routerLinkActive="text-danger" routerLink="changepass">Edit Password</a>
+                </li>
+                <li class="mb-2">
+                    <a routerLinkActive="text-danger" routerLink="address-book">Address Book</a>
+                </li>
                 <li class="mb-2">My Payment Options</li>
             </ul>
             <h4 class="fw-medium mb-3">My Orders</h4>
@@ -17,94 +24,9 @@
 
 
 
-
-
-
         <div style="padding: 30px;" class="col-md-8 accountt">
-            <h3 class="fw-medium text-danger">Edit Your Profile</h3>
-
-            <form>
-                <!-- 2 column grid layout with text inputs for the first and last names -->
-                <div class="row mb-4">
-                    <div class="col">
-                        <div data-mdb-input-init class="form-outline">
-                            <label class="form-label poppinsFont" for="form6Example1">First name</label>
-                            <input type="text" id="form6Example1" class="form-control border-0 rounded" />
-                            <!-- <input class="p-3 border-0 rounded " type="text" placeholder="Your Name"> -->
-
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div data-mdb-input-init class="form-outline">
-                            <label class="form-label poppinsFont" for="form6Example2">Last name</label>
-                            <input type="text" id="form6Example2" class="form-control border-0 rounded" />
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col">
-                        <div data-mdb-input-init class="form-outline">
-                            <label class="form-label poppinsFont" for="form6Example1">Email</label>
-                            <input type="text" id="form6Example1" class="form-control border-0 rounded" />
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div data-mdb-input-init class="form-outline">
-                            <label class="form-label poppinsFont" for="form6Example2">Address</label>
-                            <input type="text" id="form6Example2" class="form-control border-0 rounded" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Text input -->
-                <div data-mdb-input-init class="form-outline mb-2">
-                    <label class="form-label poppinsFont" for="">Password Changes</label>
-                    <input type="text" id="form6Example3" class="form-control border-0 rounded" placeholder="Current Passwod" />
-                </div>
-
-                <!-- Text input -->
-                <div data-mdb-input-init class="form-outline mb-2">
-                    <input type="text" id="form6Example4" class="form-control border-0 rounded" placeholder="New Passwod" />
-                </div>
-
-                <!-- Email input -->
-                <div data-mdb-input-init class="form-outline mb-2">
-                    <input type="email" id="form6Example5" class="form-control border-0 rounded" placeholder="Confirm New Passwod"/>
-                </div>
-                <!--               
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="number" id="form6Example6" class="form-control border-0" />
-                  <label class="form-label" for="form6Example6">Phone</label>
-                </div>
-              
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <textarea class="form-control border-0" id="form6Example7" rows="4"></textarea>
-                  <label class="form-label" for="form6Example7">Additional information</label>
-                </div>
-               -->
-
-                <!-- Submit button -->
-                <div class="d-flex align-items-center justify-content-end mt-3">
-                    <span role="button" class="text-black me-4">Cancel</span>
-                    <button class="btn btn-danger rounded pt-3 pb-3 ps-5 pe-5">Apply Coupon</button>
-                </div>
-            </form>
+            <router-outlet></router-outlet>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </div>
 </div>
