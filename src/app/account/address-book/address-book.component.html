@@ -4,7 +4,7 @@
 
 
 <div class="d-flex justify-content-center" *ngIf="allAddress.length === 0; else tableContent">
-  
+
     <div class="card">
         <div class="card-body">
             <h2 class="text-danger">No Addresses Yet</h2>
@@ -31,7 +31,6 @@
                 <th class="fw-medium">{{address.phone}}</th>
                 <th class="fw-medium">{{address.city}}</th>
                 <th class="fw-medium">{{address.details}}</th>
-                <!-- <th>{{address._id}}</th> -->
                 <th>
                     <button (click)='removeAddress(address._id)' class="btn btn-danger">Remove</button>
                 </th>
@@ -47,7 +46,6 @@
 
 <ng-template #template>
     <div class="modal-header">
-        <!-- <h4 class="modal-title pull-left">Modal</h4> -->
         <h3 class="modal-title pull-left fw-medium text-danger">Your Address</h3>
         <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
             <span aria-hidden="true" class="visually-hidden">&times;</span>

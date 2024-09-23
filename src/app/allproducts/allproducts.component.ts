@@ -7,7 +7,6 @@ import { AllproductService } from '../shared/services/allproduct.service';
   styleUrl: './allproducts.component.scss'
 })
 export class AllproductsComponent {
-
   Products: any;
   searchTerm: string = "";
   constructor(private _AllproductService: AllproductService) { }

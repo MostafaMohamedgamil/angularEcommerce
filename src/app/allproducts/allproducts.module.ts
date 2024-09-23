@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { SeemorePipe } from '../shared/pipes/seemore.pipe';
 import { SearchPipe } from '../shared/pipes/search.pipe';
 import { AppModule } from '../app.module';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { ProductdetaliesComponent } from './productdetalies/productdetalies.component';
 import { register } from 'swiper/element/bundle';
 register();
@@ -22,6 +23,7 @@ register();
     AllproductsRoutingModule,
     FormsModule,
     SharedModule,
+    NgxSkeletonLoaderModule,
     // swiper
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -2,7 +2,7 @@
     <div class="img-container position-relative overflow-hidden">
 
         <a [routerLink]="['/allproducts/productdetalies',productss._id]">
-            <img [src]="productss.imageCover" class="card-img-top " alt="...">
+            <img [src]="productss.imageCover" class="card-img-top " loading="lazy" alt="...">
         </a>
 
         <button (click)="addToCart(productss._id)" class="custom-btn position-absolute btn bg-black w-100 text-white text-center ">
@@ -22,15 +22,15 @@
         <!-- Price -->
         <div *ngIf="productss.priceAfterDiscount; else noDiscount">
             <span class="d-flex gap-2 ">
-                <p class="price-color mainText mb-0 ">${{ productss.priceAfterDiscount }}</p>
-                <p class="price-color text-decoration-line-through mb-0  text-secondary text-muted">${{ productss.price
+                <p class="price-color mainText mb-0 ">{{ productss.priceAfterDiscount|currency }}</p>
+                <p class="price-color text-decoration-line-through mb-0  text-secondary text-muted">${{ productss.price|currency
                     }}</p>
             </span>
         </div>
         <div>
             <ng-template #noDiscount>
                 <!-- <p class="price-color mainText mb-0">${{ productss.price|currency }}</p> -->
-                <p class="price-color mainText mb-0">${{ productss.price }}</p>
+                <p class="price-color mainText mb-0">{{ productss.price|currency }}</p>
             </ng-template>
         </div>
         <!-- stars -->
