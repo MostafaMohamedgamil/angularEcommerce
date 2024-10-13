@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../shared/services/auth.service';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,7 +10,14 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor(private _AuthService: AuthService, private _Router: Router) { }
+  constructor(private _AuthService: AuthService, private _Router: Router, private title: Title) {
+    this.setTitle('Login Page');
+  }
+
+  setTitle(newTitle: string) {
+    this.title.setTitle(newTitle);
+  }
+
   isLoadind: boolean = false;
   apiError: string = ""
   loginForm: FormGroup = new FormGroup({
@@ -27,9 +35,6 @@ export class LoginComponent {
       //register
       this._AuthService.login(loginForm.value).subscribe({
         next: (res) => {
-          console.log("res", res);
-
-
           if (res.message === "success") {
             localStorage.setItem('token', res.token);
             // save name and email in localStorage to use it in account settings

@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { register } from 'swiper/element/bundle';
 import { CategorysliderComponent } from '../categoryslider/categoryslider.component';
 import { MainsliderComponent } from '../mainslider/mainslider.component';
 import { SearchPipe } from './pipes/search.pipe';
@@ -11,8 +10,7 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { CardComponent } from './components/card/card.component';
 import { FlashsalesaliderComponent } from './components/flashsalesalider/flashsalesalider.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
-// import { SwiperModule } from 'swiper/angular';
-register();
+import { SwiperModule } from 'swiper/angular';
 @NgModule({
   declarations: [
     CardComponent,
@@ -27,7 +25,7 @@ register();
     CommonModule,
     SharedRoutingModule,
     CarouselModule,
-    // SwiperModule
+    SwiperModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [

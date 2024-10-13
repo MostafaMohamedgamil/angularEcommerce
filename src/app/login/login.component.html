@@ -11,7 +11,7 @@
 <div class="container ms-0 toMarginTopBottom">
     <div class="row align-items-center justify-content-center g-5">
         <div class="d-none d-lg-block col-lg-8 ps-0">
-            <img src="../../assets/signUp.jpg" alt="" class="">
+            <img src="../../assets/signUp.jpg" alt="signUp">
         </div>
         <div class=" col-lg-4 col-md-6">
             <div *ngIf="apiError" class="alert alert-danger">{{apiError}}</div>
@@ -45,7 +45,7 @@
                 <div class="m-auto">
 
                     <p>If you need to make an account <span class="fw-bold">
-                            <a routerLink="/signup">SignUp </a>
+                            <a title="signUp" routerLink="/signup">SignUp </a>
                         </span></p>
 
                 </div>
@@ -53,7 +53,7 @@
 
                 <!-- <input formControlName="rePassword" type="password " class="form-control no-border rounded-0 mb-2" placeholder="rePassword"> -->
                 <!-- <button class="btn bg-danger text-white">Create Account</button> -->
-                <button [disabled]="loginForm.invalid" type="submit" class="btn btn-color text-white p-3 w-100 mb-2">
+                <button title="logIn" [disabled]="loginForm.invalid" type="submit" class="btn btn-color text-white p-3 w-100 mb-2">
                     <i *ngIf="isLoadind" class="fas fa-spinner fa-spin spinner"></i>
                     <span *ngIf="!isLoadind"> login</span>
                 </button>

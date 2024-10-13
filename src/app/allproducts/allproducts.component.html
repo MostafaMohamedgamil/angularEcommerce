@@ -3,35 +3,12 @@
         <div>
             <input [(ngModel)]="searchTerm" type="text" placeholder="Search By Name"
                 class="form-control w-75 mx-auto my-4">
-
         </div>
         <div class="col-12 col-lg-3 col-md-6 " *ngFor="let item of Products| search :searchTerm">
             <app-card [productss]="item"></app-card>
         </div>
     </div>
 </div>
-
 <div class="item">
     <ngx-skeleton-loader count="5" appearance="custom-content" />
 </div>
-<!-- 
-<div class="container">
-    <div class="row">
-        <div>
-            <input [(ngModel)]="searchTerm" type="text" placeholder="Search By Name"
-                class="form-control w-75 mx-auto my-4">
-        </div>
-
-        <div class="col-12 col-lg-3 col-md-6" *ngIf="isLoading">
-            <div class="item">
-                <ngx-skeleton-loader count="1" appearance="custom-content"></ngx-skeleton-loader>
-            </div>
-        </div>
-
-        <ng-container *ngIf="!isLoading">
-            <div class="col-12 col-lg-3 col-md-6" *ngFor="let item of Products | search : searchTerm">
-                <app-card [productss]="item"></app-card>
-            </div>
-        </ng-container>
-    </div>
-</div> -->

@@ -33,13 +33,14 @@ import { headerInterceptor } from './shared/Interceptors/header.interceptor';
     ToastrModule.forRoot(),
     LoginModule,
     ReactiveFormsModule,
+    
   ],
   providers:[
     {
       provide: HTTP_INTERCEPTORS,
       useClass: headerInterceptor,
       multi: true,
-    }
+    },
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -5,6 +5,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { Observable } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-address-book',
@@ -13,9 +15,16 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 })
 export class AddressBookComponent {
   allAddress: any;
+  addressData$: Observable<any> | undefined;
 
-  constructor(private _Auth: AuthService, private _toastr: ToastrService, private modalService: BsModalService) { }
+  constructor(private _Auth: AuthService, private _toastr: ToastrService, private modalService: BsModalService, private title: Title) { 
+    this.setTitle('Addresses Book');
 
+  }
+
+   setTitle(newTitle: string) {
+    this.title.setTitle(newTitle);
+  }
 
   modalRef?: BsModalRef;
 
@@ -39,6 +48,7 @@ export class AddressBookComponent {
 
 
   addUserAddress() {
+    // this.addressData$ = this._Auth.userAddress(this.addressForm.value)
     if (this.addressForm.valid) {
       this._Auth.userAddress(this.addressForm.value).subscribe({
         next: (res) => {
@@ -51,35 +61,22 @@ export class AddressBookComponent {
         },
         error: (err) => {
           this._toastr.success('Error has been occured', err.message);
-
-
         }
       })
     }
-
   }
 
-
   getUserAddress() {
-    this._Auth.getUserAddress().subscribe({
-      next: (res) => {
-        console.log(`resData`, res.data);
-        this.allAddress = res.data;
-      },
-      error: (err) => {
-        console.log(`err.getUserAddresses`, err);
-
-      }
-    })
+    this.addressData$=this._Auth.getUserAddress()
   }
 
   removeAddress(addressId: string) {
+    this.addressData$ = this._Auth.removeUserAddress(addressId)
     this._Auth.removeUserAddress(addressId).subscribe({
       next: (res) => {
         // console.log(``,);
         this._toastr.success('Addresses Removed', res.message);
         this.getUserAddress()
-
       },
       error: (err) => {
         console.log(`err Remove`, err);

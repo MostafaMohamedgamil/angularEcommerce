@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AllproductService } from '../shared/services/allproduct.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -13,16 +14,20 @@ export class HomeComponent {
   seconds: number = 56;
 
   allproduct: any[] = [];
-  constructor(private _AllProduct: AllproductService) {
+  constructor(private _AllProduct: AllproductService, private title: Title) {
+    this.setTitle('Home Page');
     _AllProduct.getAllProducts().subscribe({
       next: (res) => {
-        console.log('res', res.data);
         this.allproduct = res.data;
       },
       error: (err) => {
         console.log(`err`, err);
       },
     });
+  }
+
+  setTitle(newTitle: string) {
+    this.title.setTitle(newTitle);
   }
 
   ngOnInit(): void {

@@ -32,9 +32,7 @@
 // }
 
 import { Component, OnInit } from '@angular/core';
-import { register } from 'swiper/element/bundle';
 import { AllproductService } from '../shared/services/allproduct.service';
-register();
 
 @Component({
   selector: 'app-categoryslider',
@@ -44,9 +42,9 @@ register();
 export class CategorysliderComponent implements OnInit {
 
   allCategory: any;
-  slidesPerView: number=1;
+  slidesPerView: number = 1;
 
-  constructor(private _AllCategory: AllproductService) {}
+  constructor(private _AllCategory: AllproductService) { }
 
   ngOnInit(): void {
     this.getAllcategory();
@@ -57,7 +55,7 @@ export class CategorysliderComponent implements OnInit {
   getAllcategory(): any {
     this._AllCategory.getAllCategories().subscribe({
       next: (res) => {
-        console.log("rescat", res.data);
+        // console.log("rescat", res.data);
         this.allCategory = res.data;
       },
       error: (err) => {

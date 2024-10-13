@@ -1,29 +1,26 @@
 <div class="container toMarginTopBottom">
     <div class="row justify-content-center">
         <div class="col-md-3">
-            <h4 class="fw-medium mb-3">Manage My Account</h4>
+            <p class="fs-4 fw-medium mb-3">Manage My Account</p>
             <ul class="ms-3">
                 <li class="text-danger mb-2">
-                    <a routerLinkActive="text-danger" routerLink="myprofile">My Profile</a>
+                    <a title="myprofile" routerLinkActive="text-danger" routerLink="myprofile">My Profile</a>
                 </li>
                 <li class="text-danger mb-2">
-                    <a routerLinkActive="text-danger" routerLink="changepass">Edit Password</a>
+                    <a title="Edit Password" routerLinkActive="text-danger" routerLink="changepass">Edit Password</a>
                 </li>
                 <li class="mb-2">
-                    <a routerLinkActive="text-danger" routerLink="address-book">Address Book</a>
+                    <a title="Address Book" routerLinkActive="text-danger" routerLink="address-book">Address Book</a>
                 </li>
                 <li class="mb-2">My Payment Options</li>
             </ul>
-            <h4 class="fw-medium mb-3">My Orders</h4>
+            <p class="fs-4 fw-medium mb-3">My Orders</p>
             <ul class="ms-3">
                 <li class="mb-2">My Returns</li>
                 <li class="mb-2">My Cancellations</li>
             </ul>
-            <h4 class="fw-medium mt-3">My WishList</h4>
+            <p class="fs-4 fw-medium mt-3">My WishList</p>
         </div>
-
-
-
         <div style="padding: 30px;" class="col-md-8 accountt">
             <router-outlet></router-outlet>
         </div>

@@ -6,31 +6,31 @@
 
 <nav class="navbar navbar-expand-lg bg-transparent border-bottom border-1 border-secondary">
   <div class="container">
-    <a class="navbar-brand " href="#">
+    <a title="navigate link" class="navbar-brand " href="#">
       <h2 class="fw-bold">
         Exclusive
       </h2>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    <button title="aButton" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul *ngIf="islogin" class="navbar-nav m-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a role="heading" aria-level="4" class="nav-link fw-normal " aria-current="page"
+          <a title="navigate link" class="nav-link fw-normal " aria-current="page"
             routerLinkActive="bg-main rounded-5" routerLink="home">Home</a>
         </li>
         <li class="nav-item">
-          <a role="heading" aria-level="4" class="nav-link fw-normal" routerLinkActive="bg-main rounded-5"
+          <a title="navigate link" class="nav-link fw-normal" routerLinkActive="bg-main rounded-5"
             routerLink="contact">Contact</a>
         </li>
         <li class="nav-item">
-          <a role="heading" aria-level="4" class="nav-link fw-normal" routerLinkActive="bg-main rounded-5"
+          <a title="navigate link" class="nav-link fw-normal" routerLinkActive="bg-main rounded-5"
             routerLink="about-us">About</a>
         </li>
         <li class="nav-item">
-          <a role="heading" aria-level="4" class="nav-link fw-normal" routerLinkActive="bg-main rounded-5"
+          <a title="navigate link" class="nav-link fw-normal" routerLinkActive="bg-main rounded-5"
             routerLink="cart">Cart</a>
         </li>
 
@@ -39,11 +39,10 @@
 
 
 
-      <ul *ngIf="islogin" class="navbar-nav ms-auto  mb-2 mb-lg-0 d-flex gap-3">
-        <div class="d-flex gap-3  justify-content-center align-items-center">
+      <ul *ngIf="islogin" class="navbar-nav ms-auto  mb-2 mb-lg-0 d-flex gap-3   justify-content-center align-items-center">
           <!-- Cart -->
           <li class="nav-item position-relative">
-            <a class="text-black" routerLink="cart">
+            <a title="navigate link" class="text-black" routerLink="cart">
               <i class="ri-shopping-cart-line"></i>
             </a>
             <span
@@ -51,49 +50,51 @@
           </li>
           <!-- Wishlist -->
           <li class="nav-item position-relative">
-            <a class="text-black heart-line" href="">
+            <a title="navigate link" class="text-black heart-line" href="">
               <i class="ri-heart-line"></i>
             </a>
             <span
               class="detailsNumber bg-danger text-white position-absolute top-0 end-0 d-flex justify-content-center align-items-center ">1</span>
 
           </li>
-        </div>
 
         <!-- Manage Account -->
-        <div class="btn-group me-5" dropdown>
-          <button id="button-basic" dropdownToggle type="button" class="btn ps-0 rounded-5"
-            aria-controls="dropdown-basic">
+         <li>
 
-            <i class="ri-user-line text-black"></i>
-            <span class="caret"></span>
-
-          </button>
-          <ul class="" id="dropdown-basic" *dropdownMenu class="dropdown-menu trans mt-1 " role="menu"
-            aria-labelledby="button-basic">
-
-            <li role="menuitem">
-              <a class="dropdown-item d-flex align-items-center gap-3" routerLink="account">
-                <i class="ri-user-line"></i>
-                Manage My Account
-              </a>
-            </li>
-
-            <li role="menuitem">
-              <a class="dropdown-item  d-flex align-items-center gap-3" routerLink="#">
-                <i class="ri-archive-2-line"></i>
-                My Order</a>
-            </li>
-
-            <li (click)="logout()" role="menuitem">
-              <a class="dropdown-item  d-flex align-items-center gap-3" routerLink="#">
-                <i class="ri-logout-box-line"></i>
-                Logout</a>
-            </li>
-
-          </ul>
-
-        </div>
+           <div class="btn-group me-5" dropdown>
+             <button title="btn about dropdown" id="button-basic" dropdownToggle type="button" class="btn ps-0 rounded-5"
+               aria-controls="dropdown-basic">
+   
+               <i class="ri-user-line text-black"></i>
+               <span class="caret"></span>
+   
+             </button>
+             <ul class="" id="dropdown-basic" *dropdownMenu class="dropdown-menu trans mt-1 " role="menu"
+               aria-labelledby="button-basic">
+   
+               <li role="menuitem">
+                 <a title="navigate link" class="dropdown-item d-flex align-items-center gap-3" routerLink="account">
+                   <i class="ri-user-line"></i>
+                   Manage My Account
+                 </a>
+               </li>
+   
+               <li role="menuitem">
+                 <a title="navigate link" class="dropdown-item  d-flex align-items-center gap-3" routerLink="#">
+                   <i class="ri-archive-2-line"></i>
+                   My Order</a>
+               </li>
+   
+               <li (click)="logout()" role="menuitem">
+                 <a title="navigate link" class="dropdown-item  d-flex align-items-center gap-3" routerLink="#">
+                   <i class="ri-logout-box-line"></i>
+                   Logout</a>
+               </li>
+   
+             </ul>
+   
+           </div>
+         </li>
 
       </ul>
     </div>

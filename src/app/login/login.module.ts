@@ -7,9 +7,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
-import { register } from 'swiper/element/bundle';
-register();
-
 @NgModule({
   declarations: [LoginComponent],
   imports: [

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Observable } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-changepass',
@@ -9,8 +11,15 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './changepass.component.scss'
 })
 export class ChangepassComponent {
-  constructor(private _Auth: AuthService, private _toastr: ToastrService) { }
 
+
+  constructor(private _Auth: AuthService, private _toastr: ToastrService, private title: Title) {
+    this.setTitle('Change Pass');
+
+  }
+  setTitle(newTitle: string) {
+    this.title.setTitle(newTitle);
+  }
   passForm: FormGroup = new FormGroup({
     currentPassword: new FormControl(null, [
       Validators.required,
@@ -42,7 +51,5 @@ export class ChangepassComponent {
         }
       })
     }
-
   }
-
 }

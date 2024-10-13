@@ -1,24 +1,24 @@
-<div class="container mt-4">
+<div class="container mt-4 toMarginTopBottom">
     <div class="row">
         <!-- Slider Images -->
-        <div class="col-md-2">
-            <!-- <img class="slider-images mb-1" *ngFor="let img of productDetalis.images" [src]="img" alt=""> -->
-            <swiper-container loop="true">
-                <swiper-slide *ngFor="let img of productDetalis.images">
-                     <img class="slider-images mb-1"  [src]="img"
-                        alt="">
-                </swiper-slide>
-            </swiper-container>
+        <div class="col-md-2" *ngIf="productDetalis && productDetalis.images.length">
 
+            <swiper [direction]="'vertical'" [slidesPerView]="3" [autoHeight]="true" [spaceBetween]="20">
 
+                <ng-template swiperSlide *ngFor="let img of productDetalis.images">
+                    <img role="button" (click)="imagePath=img"
+                        class=" w-100 h-100 object-fit-contain slider-images mb-1" [src]="img" alt="sliderimages">
+                    <!-- <img (click)="imagePath = img" class="slider-images mb-1"  [src]="img"
+                        alt="sliderimages"> -->
+                </ng-template>
+            </swiper>
         </div>
-
-
-
 
         <!-- Main Image -->
         <div class="col-md-5">
-            <img class="custom-height-image " [src]="productDetalis?.imageCover" alt="">
+            <img class="custom-height-image " [src]="imagePath" alt="imageCover">
+
+            <!-- <img id="bigImage" class="custom-height-image " [src]="imagePath ? imagePath : productDetalis?.imageCover" alt="imageCover"> -->
         </div>
 
 
@@ -26,8 +26,8 @@
         <!-- productDetalis -->
         <div class="col-md-5">
             <h3 class="fw-semibold">{{productDetalis?.title.slice(0,17)}}</h3>
-            <div class="rev d-flex align-items-center">
-                <p class="d-flex gap-1">
+            <div class="rev d-flex align-items-center gap-4">
+                <p class="d-flex gap-1 mb-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-star" viewBox="0 0 16 16">
                         <path
@@ -62,8 +62,44 @@
 
             <hr class="mb-3">
 
+            <div class="position-relative mb-3 ">
+                <span>Colours: </span>
+                <span class="color position-absolute"></span>
+                <span class="colorTwo position-absolute"></span>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 mb-4">
+                <span>Size: </span>
+                
+
+                    <div class="d-flex justify-content-center">
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" name="size" id="sizeXS" value="XS">
+                            <label class="poppinsFont form-check-label" for="sizeXS">XS</label>
+                        </div>
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" name="size" id="sizeS" value="S">
+                            <label class="poppinsFont form-check-label" for="sizeS">S</label>
+                        </div>
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" name="size" id="sizeM" value="M" checked>
+                            <label class="poppinsFont form-check-label" for="sizeM">M</label>
+                        </div>
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" name="size" id="sizeL" value="L">
+                            <label class="poppinsFont form-check-label" for="sizeL">L</label>
+                        </div>
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" name="size" id="sizeXL" value="XL">
+                            <label class="poppinsFont form-check-label" for="sizeXL">XL</label>
+                        </div>
+                    </div>
+
+
+            </div>
+
             <div class="d-flex justify-content-around">
-                <button class="btn mainColor text-white">Buy Now</button>
+                <button title="buyNow" class="btn mainColor text-white">Buy Now</button>
                 <div class="ico border border-1 rounded ">
                     <i class="ri-heart-line "></i>
                 </div>

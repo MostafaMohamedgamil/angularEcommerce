@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../shared/services/auth.service';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +10,13 @@ import { Router } from '@angular/router';
   styleUrl: './signup.component.scss',
 })
 export class SignupComponent {
-  constructor(private _AuthService: AuthService, private _Router: Router) {}
+  constructor(private _AuthService: AuthService, private _Router: Router, private title: Title) {
+    this.setTitle('Sign up');
+  }
+
+  setTitle(newTitle: string) {
+    this.title.setTitle(newTitle);
+  }
   isLoadind: boolean = false;
   apiError: string = '';
   registerForm: FormGroup = new FormGroup({
@@ -38,14 +45,12 @@ export class SignupComponent {
     this.isLoadind = true;
 
     if (registerForm.valid) {
-      //register
       this._AuthService.register(registerForm.value).subscribe({
         next: (res) => {
           console.log('res', res);
           if (res.message === 'success') {
             this.isLoadind = false;
             this._Router.navigate(['/login']);
-            // Navigate toLoginPage
           }
         },
         error: (err) => {

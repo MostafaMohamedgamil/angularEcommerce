@@ -5,26 +5,22 @@ import { AllproductsRoutingModule } from './allproducts-routing.module';
 import { AllproductsComponent } from './allproducts.component';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
-import { SeemorePipe } from '../shared/pipes/seemore.pipe';
-import { SearchPipe } from '../shared/pipes/search.pipe';
-import { AppModule } from '../app.module';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { ProductdetaliesComponent } from './productdetalies/productdetalies.component';
-import { register } from 'swiper/element/bundle';
-register();
 
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [AllproductsComponent,
     ProductdetaliesComponent
   ],
   imports: [
-    CommonModule,
+  CommonModule,
     AllproductsRoutingModule,
     FormsModule,
     SharedModule,
     NgxSkeletonLoaderModule,
-    // swiper
+    SwiperModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

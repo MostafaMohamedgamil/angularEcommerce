@@ -1,18 +1,18 @@
 <div class="customCard mb-4">
     <div class="img-container position-relative overflow-hidden">
 
-        <a [routerLink]="['/allproducts/productdetalies',productss._id]">
-            <img [src]="productss.imageCover" class="card-img-top " loading="lazy" alt="...">
+        <a title="navigateLink" [routerLink]="['/allproducts/productdetalies',productss._id]">
+            <img [src]="productss.imageCover" class="card-img-top "  alt="product">
         </a>
 
-        <button (click)="addToCart(productss._id)" class="custom-btn position-absolute btn bg-black w-100 text-white text-center ">
+        <button title="add tot cart" (click)="addToCart(productss._id)" class="custom-btn position-absolute btn bg-black w-100 text-white text-center ">
             <span class="btn-text">Add To Cart</span>
         </button>
 
 
         <div class="icons d-flex flex-column position-absolute top-0 ">
-            <a role="button"> <i class="ri-heart-line bg-white rounded-Circle p-1 mb-5"></i> </a>
-            <a [routerLink]="['/productdetalies',productss._id]" role="button"> <i class="ri-eye-line bg-white rounded-Circle m-auto p-1"></i> </a>
+            <a title="navigateLink" role="button"> <i class="ri-heart-line bg-white rounded-Circle p-1 mb-5"></i> </a>
+            <a title="navigateLink" [routerLink]="['/productdetalies',productss._id]" role="button"> <i class="ri-eye-line bg-white rounded-Circle m-auto p-1"></i> </a>
         </div>
     </div>
 

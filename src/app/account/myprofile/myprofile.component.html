@@ -1,4 +1,4 @@
-<h3 class="fw-medium text-danger">Edit Your Profile</h3>
+<p class="fs-3 fw-medium text-danger">Edit Your Profile</p>
 
 <form (ngSubmit)="updateData(form)" [formGroup]="form">
     <div class="row mb-4 flex-column">
@@ -6,15 +6,12 @@
             <div data-mdb-input-init class="form-outline mb-3 ">
                 <label class="form-label poppinsFont fw-semibold" for="name">First name</label>
                 <input formControlName="name" type="text" id="name" class="form-control border-0 rounded" />
-
-
                 <div *ngIf="form.get('name')?.errors && form.get('name')?.touched" class="text-danger">
                     <p *ngIf="form.get('name')?.getError('minlength')" class='m-0'>Name Must be more than 3 letters</p>
                     <p *ngIf="form.get('name')?.getError('maxlength')" class="m-0 ">Name Must be 16 letters or less
                     </p>
                     <p *ngIf="form.get('name')?.getError('required')" class="m-0 ">Name Must be Required</p>
                 </div>
-
             </div>
         </div>
         <div class="row d-flex">
@@ -23,13 +20,10 @@
                 <div data-mdb-input-init class="form-outline  ">
                     <label class="form-label poppinsFont fw-semibold" for="email">Email</label>
                     <input formControlName="email" type="text" id="email" class="form-control border-0 rounded" />
-
-
                     <div *ngIf="form.get('email')?.errors && form.get('email')?.touched" class="text-danger">
                         <p *ngIf="form.get('email')?.getError('email')" class='m-0'>Email is In Valid</p>
                         <p *ngIf="form.get('email')?.getError('required')" class="m-0 ">Email is Required</p>
                     </div>
-
                 </div>
             </div>
             <div class="col">
@@ -46,23 +40,7 @@
             </div>
         </div>
     </div>
-    <!-- 
-        <div data-mdb-input-init class="form-outline mb-2">
-            <label class="form-label poppinsFont" for="">Password Changes</label>
-            <input type="text" id="form6Example3" class="form-control border-0 rounded" placeholder="Current Passwod" />
-        </div>
-
-        <div data-mdb-input-init class="form-outline mb-2">
-            <input type="text" id="form6Example4" class="form-control border-0 rounded" placeholder="New Passwod" />
-        </div>
-
-        <div data-mdb-input-init class="form-outline mb-2">
-            <input type="email" id="form6Example5" class="form-control border-0 rounded"
-                placeholder="Confirm New Passwod" />
-        </div> -->
-
-
     <div class="d-flex align-items-center justify-content-end mt-3">
-        <button type="submit" [disabled]="form.invalid" class="btn btn-danger rounded pt-3 pb-3 ps-5 pe-5">Save Changes</button>
+        <button title="save Change" type="submit" [disabled]="form.invalid" class="btn btn-danger rounded pt-3 pb-3 ps-5 pe-5">Save Changes</button>
     </div>
 </form>

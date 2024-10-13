@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../shared/services/auth.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-allorder',
@@ -8,7 +9,14 @@ import { AuthService } from '../shared/services/auth.service';
 })
 export class AllorderComponent {
 
-  constructor(private _AuthService: AuthService) { }
+  constructor(private _AuthService: AuthService,private title:Title) {
+
+    this.setTitle('All Orders');
+   }
+   
+   setTitle(newTitle: string) {
+    this.title.setTitle(newTitle);
+  }
 
   ngOnInit(): void {
     this.allorders()
@@ -17,7 +25,7 @@ export class AllorderComponent {
   allorders() {
     this._AuthService.getAllOrders().subscribe({
       next: (res) => {
-        console.log("allOrder", res);
+        // console.log("allOrder", res);
         this.orders = res
       },
       error: (err) => {

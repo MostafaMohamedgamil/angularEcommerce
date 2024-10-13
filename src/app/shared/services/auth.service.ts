@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -36,26 +37,34 @@ export class AuthService {
 
   logOut() {
     localStorage.removeItem('token')
+    localStorage.removeItem('UserId')
+    localStorage.removeItem('userData')
     this.userData.next(null)
     this._Router.navigate(['/login']);
 
   }
   register(userData: object): Observable<any> {
-
-    return this._HttpClient.post(`https://ecommerce.routemisr.com/api/v1/auth/signup`, userData)
+    const baseUrl = environment.BASE_URL + 'auth/signup'
+    return this._HttpClient.post(baseUrl, userData)
+    // return this._HttpClient.post(`https://ecommerce.routemisr.com/api/v1/auth/signup`, userData)
 
   }
 
   login(userData: object): Observable<any> {
-
-    return this._HttpClient.post(`https://ecommerce.routemisr.com/api/v1/auth/signin`, userData)
+    const baseUrl = environment.BASE_URL + 'auth/signin'
+    return this._HttpClient.post(baseUrl, userData)
+    // return this._HttpClient.post(`https://ecommerce.routemisr.com/api/v1/auth/signin`, userData)
 
   }
   userId: string = localStorage.getItem('UserId') || '';
   //  userId: string | null = localStorage.getItem('UserId');
 
   getAllOrders(): Observable<any> {
-    return this._HttpClient.get(`https://ecommerce.routemisr.com/api/v1/orders/user/${this.userId}`)
+    const baseUrl = environment.BASE_URL + `orders/user/${this.userId}`
+    return this._HttpClient.get(baseUrl)
+
+
+    // return this._HttpClient.get(`https://ecommerce.routemisr.com/api/v1/orders/user/${this.userId}`)
   }
 
 
@@ -63,21 +72,35 @@ export class AuthService {
 
 
   updateUserData(userData: any): Observable<any> {
-    return this._HttpClient.put(`https://ecommerce.routemisr.com/api/v1/users/updateMe/`,
-      userData,
-      {
-        headers: this.headers,
-      }
-    )
-  }
-
-  updateUserPass(userPass: any): Observable<any> {
-    return this._HttpClient.put(`https://ecommerce.routemisr.com/api/v1/users/changeMyPassword`,
-      userPass,
+    const baseUrl = environment.BASE_URL + `users/updateMe/`
+    return this._HttpClient.put(baseUrl, userData,
       {
         headers: this.headers
       }
     )
+
+    // return this._HttpClient.put(`https://ecommerce.routemisr.com/api/v1/users/updateMe/`,
+    //   userData,
+    //   {
+    //     headers: this.headers,
+    //   }
+    // )
+  }
+
+  updateUserPass(userPass: any): Observable<any> {
+    const baseUrl = environment.BASE_URL + `users/changeMyPassword`
+    return this._HttpClient.put(baseUrl, userPass,
+      {
+        headers: this.headers
+      }
+    )
+
+    // return this._HttpClient.put(`https://ecommerce.routemisr.com/api/v1/users/changeMyPassword`,
+    //   userPass,
+    //   {
+    //     headers: this.headers
+    //   }
+    // )
   }
 
 

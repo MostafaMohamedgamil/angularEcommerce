@@ -1,43 +1,35 @@
-<h3 class="fw-medium text-danger mb-4">Password Changes</h3>
-
+<p class="fs-3 fw-medium text-danger mb-4">Password Changes</p>
 <form (ngSubmit)="updatePassword()" [formGroup]="passForm">
-
-
     <div data-mdb-input-init class="form-outline mb-2">
         <input formControlName="currentPassword" type="password" id="form6Example3" class="form-control mb-3  rounded"
             placeholder="Current Passwod" />
-            <div *ngIf="passForm.get('password')?.errors && passForm.get('password')?.touched"
-            class="text-danger">
+        <div *ngIf="passForm.get('password')?.errors && passForm.get('password')?.touched" class="text-danger">
             <p *ngIf="passForm.get('password')?.getError('pattern')" class='m-0'>Password Must Starts with
                 an uppercase letter Followed by 5 to 10 characters (Lowercase,Digits)</p>
             <p *ngIf="passForm.get('password')?.getError('required')" class="m-0 ">password is Required</p>
         </div>
     </div>
-
     <div data-mdb-input-init class="form-outline mb-2">
         <input formControlName="password" type="password" id="form6Example4" class="form-control mb-3  rounded"
             placeholder="New Passwod" />
-            <div *ngIf="passForm.get('password')?.errors && passForm.get('password')?.touched"
-            class="text-danger">
+        <div *ngIf="passForm.get('password')?.errors && passForm.get('password')?.touched" class="text-danger">
             <p *ngIf="passForm.get('password')?.getError('pattern')" class='m-0'>Password Must Starts with
                 an uppercase letter Followed by 5 to 10 characters (Lowercase,Digits)</p>
             <p *ngIf="passForm.get('password')?.getError('required')" class="m-0 ">password is Required</p>
         </div>
     </div>
-
     <div data-mdb-input-init class="form-outline mb-2">
         <input formControlName="rePassword" type="password" id="form6Example5" class="form-control mb-3  rounded"
             placeholder="Confirm New Passwod" />
-            <div *ngIf="passForm.get('password')?.errors && passForm.get('password')?.touched"
-            class="text-danger">
+        <div *ngIf="passForm.get('password')?.errors && passForm.get('password')?.touched" class="text-danger">
             <p *ngIf="passForm.get('password')?.getError('pattern')" class='m-0'>Password Must Starts with
                 an uppercase letter Followed by 5 to 10 characters (Lowercase,Digits)</p>
             <p *ngIf="passForm.get('password')?.getError('required')" class="m-0 ">password is Required</p>
         </div>
     </div>
-
     <div class="d-flex align-items-center justify-content-end mt-3">
-        <button type="submit" [disabled]="passForm.invalid" class="btn btn-danger rounded pt-3 pb-3 ps-5 pe-5">Save
+        <button title="saveChange" type="submit" [disabled]="passForm.invalid"
+            class="btn btn-danger rounded pt-3 pb-3 ps-5 pe-5">Save
             Changes</button>
     </div>
 </form>

@@ -41,28 +41,6 @@ export class CartService {
     );
   }
 
-
-  // addToCart(productId: string): Observable<any> {
-  //   const BASE_URL = environment.BASE_URL;
-  //   return this._HttpClient.post(
-  //     BASE_URL + `cart`,
-  //     { productId: productId },
-  //     {
-  //       headers: this.headers,
-  //     }
-  //   );
-  // }
-
-
-
-
-
-
-
-
-
-
-
   getLoggedUserCart(): Observable<any> {
     const BASE_URL = environment.BASE_URL + 'cart';
     return this._HttpClient.get(BASE_URL, {

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../shared/services/auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-myprofile',
@@ -9,7 +10,14 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './myprofile.component.scss'
 })
 export class MyprofileComponent {
-  constructor(private _Auth: AuthService, private toastr: ToastrService) { }
+  constructor(private _Auth: AuthService, private toastr: ToastrService,private title:Title) { 
+
+    this.setTitle('My Profile');
+  }
+
+   setTitle(newTitle: string) {
+    this.title.setTitle(newTitle);
+  }
 
   form: FormGroup = new FormGroup({
     name: new FormControl(null, [
@@ -23,8 +31,6 @@ export class MyprofileComponent {
       Validators.pattern(/^01[0125][0-9]{8}$/),
     ]),
   });
-
-
   updateData(form: FormGroup) {
     if (form.valid) {
       this._Auth.updateUserData(form.value).subscribe({
@@ -40,8 +46,6 @@ export class MyprofileComponent {
       })
     }
   }
-
-
   ngOnInit(): void {
     console.log("form", this.form);
     this.form.patchValue(
