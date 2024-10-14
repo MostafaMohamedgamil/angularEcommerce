@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
-import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CategorysliderComponent } from '../categoryslider/categoryslider.component';
 import { MainsliderComponent } from '../mainslider/mainslider.component';
 import { SearchPipe } from './pipes/search.pipe';
@@ -24,7 +23,6 @@ import { SwiperModule } from 'swiper/angular';
   imports: [
     CommonModule,
     SharedRoutingModule,
-    CarouselModule,
     SwiperModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

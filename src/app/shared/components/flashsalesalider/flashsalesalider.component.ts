@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 import { AllproductService } from '../../services/allproduct.service';
 
 @Component({
@@ -8,30 +7,7 @@ import { AllproductService } from '../../services/allproduct.service';
   styleUrl: './flashsalesalider.component.scss',
 })
 export class FlashsalesaliderComponent {
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
-    navSpeed: 700,
-    navText: ['', ''],
-    responsive: {
-      0: {
-        items: 1,
-      },
-      400: {
-        items: 2,
-      },
-      740: {
-        items: 3,
-      },
-      940: {
-        items: 4,
-      },
-    },
-    nav: true,
-  };
+ 
 
   allproduct: any[] = [];
   constructor(private _AllproductService: AllproductService) {

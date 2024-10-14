@@ -22,7 +22,10 @@ body {
     font-family: "Poppins", sans-serif;
 
 }
-
+.swiper-pagination-bullet{
+    width: 10px !important;
+    height: 10px !important;
+} 
 li {
     list-style: none;
 }
