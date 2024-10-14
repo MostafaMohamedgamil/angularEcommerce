@@ -2,19 +2,20 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, count, Observable } from 'rxjs';
 import { environment } from './../../../environments/environment';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   numOfCartItems = new BehaviorSubject(0);
-  constructor(private _HttpClient: HttpClient) {
+  constructor(private _HttpClient: HttpClient,private _localStorageService:LocalStorageService) {
     this.getLoggedUserCart().subscribe({
       next: (res) => {
         // numOfCartItems
         this.numOfCartItems.next(res.numOfCartItems);
         console.log(res);
-        localStorage.setItem('UserId', res.data.cartOwner)
+        this._localStorageService.setItem('UserId', res.data.cartOwner)
       },
       error: (err) => {
         console.log(err);
@@ -27,7 +28,7 @@ export class CartService {
   Post: url + data has product id that add it to cart  +   headers
   */
   headers: any = {
-    token: localStorage.getItem('token'),
+    token: this._localStorageService.getItem('token') ? this._localStorageService.getItem('token') : '',
   };
 
   addToCart(productId: string): Observable<any> {   
@@ -42,6 +43,7 @@ export class CartService {
   }
 
   getLoggedUserCart(): Observable<any> {
+    console.log(this.headers)
     const BASE_URL = environment.BASE_URL + 'cart';
     return this._HttpClient.get(BASE_URL, {
       headers: this.headers,

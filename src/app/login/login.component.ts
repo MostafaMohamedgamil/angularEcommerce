@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../shared/services/auth.service';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { LocalStorageService } from '../shared/services/local-storage.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +11,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class LoginComponent {
 
-  constructor(private _AuthService: AuthService, private _Router: Router, private title: Title) {
+  constructor(private _AuthService: AuthService, private _Router: Router, private title: Title,private _localStorageService: LocalStorageService) {
     this.setTitle('Login Page');
   }
 
@@ -36,9 +37,9 @@ export class LoginComponent {
       this._AuthService.login(loginForm.value).subscribe({
         next: (res) => {
           if (res.message === "success") {
-            localStorage.setItem('token', res.token);
+            this._localStorageService.setItem('token', res.token);
             // save name and email in localStorage to use it in account settings
-            localStorage.setItem('userData', JSON.stringify(res.user));
+            this._localStorageService.setItem('userData', JSON.stringify(res.user));
             this._AuthService.decodeUserData();
             this.isLoadind = false;
             this._Router.navigate(['/home']);

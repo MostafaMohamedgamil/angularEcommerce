@@ -3,6 +3,7 @@ import { CartService } from './../shared/services/cart.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { WindowService } from '../shared/services/window.service';
 
 @Component({
   selector: 'app-checkout',
@@ -12,7 +13,7 @@ import { Title } from '@angular/platform-browser';
 export class CheckoutComponent {
   cartDetails: any = null;
 
-  constructor(private _CartService: CartService, private _Router: Router, private title: Title) {
+  constructor(private _CartService: CartService, private _Router: Router, private title: Title,private _windowService: WindowService) {
     this.setTitle('Checkout');
   }
   setTitle(newTitle: string) {
@@ -38,7 +39,7 @@ export class CheckoutComponent {
   });
 
   navigateToPage(url: string) {
-    window.location.href = url
+    this._windowService.navigateTo(url)
   }
 
 

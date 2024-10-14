@@ -1,38 +1,6 @@
-// import { Component, OnInit } from '@angular/core';
-// import { register } from 'swiper/element/bundle';
-// import { AllproductService } from '../shared/services/allproduct.service';
-// register();
-
-// @Component({
-//   selector: 'app-categoryslider',
-//   templateUrl: './categoryslider.component.html',
-//   styleUrl: './categoryslider.component.scss'
-// })
-// export class CategorysliderComponent {
-
-//   allCategory: any
-// constructor(private _AllCategory: AllproductService) {
-// }
-// ngOnInit(): void {
-//   this.getAllcategory();
-// }
-
-// getAllcategory(): any {
-//   this._AllCategory.getAllCategories().subscribe({
-//     next: (res) => {
-//       console.log("rescat", res.data);
-//       this.allCategory = res.data;
-//     },
-//     error: (err) => {
-//       console.log('err', err);
-//     }
-
-//   })
-// }
-// }
-
 import { Component, OnInit } from '@angular/core';
 import { AllproductService } from '../shared/services/allproduct.service';
+import { WindowService } from '../shared/services/window.service';
 
 @Component({
   selector: 'app-categoryslider',
@@ -44,18 +12,18 @@ export class CategorysliderComponent implements OnInit {
   allCategory: any;
   slidesPerView: number = 1;
 
-  constructor(private _AllCategory: AllproductService) { }
+  constructor(private _AllCategory: AllproductService,private _windowService:WindowService) { }
 
   ngOnInit(): void {
     this.getAllcategory();
-    this.updateSlidesPerView();
-    window.addEventListener('resize', this.updateSlidesPerView.bind(this));
+    // this.updateSlidesPerView();
+    // this._windowService.addEventListener('resize', this.updateSlidesPerView.bind(this));
+    // this._windowService.addResizeListener(this.updateSlidesPerView.bind(this));
   }
 
   getAllcategory(): any {
     this._AllCategory.getAllCategories().subscribe({
       next: (res) => {
-        // console.log("rescat", res.data);
         this.allCategory = res.data;
       },
       error: (err) => {
@@ -64,19 +32,19 @@ export class CategorysliderComponent implements OnInit {
     });
   }
 
-  updateSlidesPerView(): void {
-    const width = window.innerWidth;
-    if (width >= 1200) {
-      this.slidesPerView = 6;
-    } else if (width >= 992) {
-      this.slidesPerView = 4;
-    } else if (width >= 768) {
-      this.slidesPerView = 3;
-    } else if (width >= 576) {
-      this.slidesPerView = 2;
-    } else {
-      this.slidesPerView = 1;
-    }
-  }
+  // updateSlidesPerView(): void {
+  //   const width = window.innerWidth;
+  //   if (width >= 1200) {
+  //     this.slidesPerView = 6;
+  //   } else if (width >= 992) {
+  //     this.slidesPerView = 4;
+  //   } else if (width >= 768) {
+  //     this.slidesPerView = 3;
+  //   } else if (width >= 576) {
+  //     this.slidesPerView = 2;
+  //   } else {
+  //     this.slidesPerView = 1;
+  //   }
+  // }
 }
 

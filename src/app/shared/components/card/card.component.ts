@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { Router } from '@angular/router';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-card',
@@ -10,11 +11,11 @@ import { Router } from '@angular/router';
 export class CardComponent {
   @Input() productss: any;
   // constructor(private router: Router) {}
-  constructor(private _CartService: CartService ,private router: Router) {}
+  constructor(private _CartService: CartService ,private router: Router ,private _localStorageService:LocalStorageService) {}
 
   addToCart(productId: string) {
     
-    if(localStorage.getItem('token') !==null){
+    if(this._localStorageService.getItem('token') !==null){
     
     this._CartService.addToCart(productId).subscribe({
       next: (res) => {

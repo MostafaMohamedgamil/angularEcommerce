@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../shared/services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { Title } from '@angular/platform-browser';
+import { LocalStorageService } from '../../shared/services/local-storage.service';
 
 @Component({
   selector: 'app-myprofile',
@@ -10,7 +11,7 @@ import { Title } from '@angular/platform-browser';
   styleUrl: './myprofile.component.scss'
 })
 export class MyprofileComponent {
-  constructor(private _Auth: AuthService, private toastr: ToastrService,private title:Title) { 
+  constructor(private _Auth: AuthService, private toastr: ToastrService,private title:Title,private _localStorageService:LocalStorageService) { 
 
     this.setTitle('My Profile');
   }
@@ -49,6 +50,6 @@ export class MyprofileComponent {
   ngOnInit(): void {
     console.log("form", this.form);
     this.form.patchValue(
-      JSON.parse(localStorage.getItem('userData') || ''))
+      JSON.parse(this._localStorageService.getItem('userData') || ''))
   }
 }
