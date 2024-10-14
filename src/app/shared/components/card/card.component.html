@@ -1,24 +1,18 @@
 <div class="customCard mb-4">
     <div class="img-container position-relative overflow-hidden">
-
         <a title="navigateLink" [routerLink]="['/allproducts/productdetalies',productss._id]">
             <img [src]="productss.imageCover" class="card-img-top "  alt="product">
         </a>
-
         <button title="add tot cart" (click)="addToCart(productss._id)" class="custom-btn position-absolute btn bg-black w-100 text-white text-center ">
             <span class="btn-text">Add To Cart</span>
         </button>
-
-
         <div class="icons d-flex flex-column position-absolute top-0 ">
             <a title="navigateLink" role="button"> <i class="ri-heart-line bg-white rounded-Circle p-1 mb-5"></i> </a>
             <a title="navigateLink" [routerLink]="['/productdetalies',productss._id]" role="button"> <i class="ri-eye-line bg-white rounded-Circle m-auto p-1"></i> </a>
         </div>
     </div>
-
     <div class="card-body d-flex flex-column justify-content-evenly">
         <p class="title mb-0">{{productss.title.slice(0,15)}}</p>
-
         <!-- Price -->
         <div *ngIf="productss.priceAfterDiscount; else noDiscount">
             <span class="d-flex gap-2 ">
@@ -29,13 +23,11 @@
         </div>
         <div>
             <ng-template #noDiscount>
-                <!-- <p class="price-color mainText mb-0">${{ productss.price|currency }}</p> -->
                 <p class="price-color mainText mb-0">{{ productss.price|currency }}</p>
             </ng-template>
         </div>
         <!-- stars -->
         <div class="d-flex">
-
             <div class="star me-1">
                 <i class=" ratingColor ri-star-s-fill"></i>
                 <i class=" ratingColor ri-star-s-fill"></i>
@@ -43,7 +35,6 @@
                 <i class=" ratingColor ri-star-s-fill"></i>
                 <i class=" ratingColor ri-star-s-fill"></i>
             </div>
-
             <p class="text-secondary text-muted price-color">({{productss.ratingsAverage}})</p>
         </div>
     </div>

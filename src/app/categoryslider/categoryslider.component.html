@@ -1,29 +1,6 @@
-<!-- <swiper-container slides-per-view="6"  loop="true">
-    <swiper-slide class="m-2" *ngFor="let cat of allCategory">
-        <img class="image rounded" [src]="cat?.image" alt="">
-        <h3 class="imageDetalis fw-semibold">{{cat.name}}</h3>
-    </swiper-slide>
-
-</swiper-container> -->
-
-
-<!-- <swiper [direction]="'horizontal'" [slidesPerView]="slidesPerView">
-  <ng-template swipeSlide class="m-2" *ngFor="let cat of allCategory">
+<swiper [slidesPerView]="slidesPerView" [loop]="true">
+  <ng-template swiperSlide class="m-2" *ngFor="let cat of allCategory">
     <img class="image rounded" [src]="cat?.image" alt="catimg">
     <h3 class="imageDetalis fw-semibold">{{cat.name}}</h3>
   </ng-template>
-</swiper> -->
-
-
-
-
-
-
-
-<swiper [slidesPerView]="slidesPerView" [loop]="true">
-    <ng-template swiperSlide class="m-2" *ngFor="let cat of allCategory">
-      <img class="image rounded" [src]="cat?.image" alt="catimg">
-      <h3 class="imageDetalis fw-semibold">{{cat.name}}</h3>
-    </ng-template>
-  </swiper>
-  
+</swiper>

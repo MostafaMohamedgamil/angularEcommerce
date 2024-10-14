@@ -1,12 +1,4 @@
 h4 {
-    //styleName: Title/20PX Medium;
-    // font-family: "Poppins", sans-serif !important;
-    // font-size: 20px;
-    // font-weight: 500;
-    // line-height: 28px;
-    // text-align: left;
-
-    //styleName: Heading/24PX Bold;
     font-family: "Inter", sans-serif;
     font-size: 24px;
     font-weight: 700;
@@ -15,14 +7,13 @@ h4 {
     text-align: left;
 
 }
-.subs{
-    //styleName: Title/20PX Medium;
-// font-family: Poppins;
-font-family: "Poppins", sans-serif !important;
-font-size: 20px !important;
-font-weight: 500 !important;
-line-height: 28px !important;
-text-align: left !important;
+
+.subs {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    line-height: 28px !important;
+    text-align: left !important;
 
 }
 
@@ -32,9 +23,8 @@ text-align: left !important;
     font-weight: 400 !important;
     line-height: 24px !important;
     text-align: left !important;
-
 }
 
-.save{
+.save {
     color: gray;
 }

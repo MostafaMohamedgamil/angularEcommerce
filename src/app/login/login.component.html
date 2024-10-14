@@ -6,8 +6,6 @@
         </form>
     </div>
 </div>
-
-
 <div class="container ms-0 toMarginTopBottom">
     <div class="row align-items-center justify-content-center g-5">
         <div class="d-none d-lg-block col-lg-8 ps-0">
@@ -17,15 +15,11 @@
             <div *ngIf="apiError" class="alert alert-danger">{{apiError}}</div>
             <h2>Create an account</h2>
             <p class="fw-normal">Enter your detalis below</p>
-
-            
             <p>
                 admin2&#64;admin2.com
                 A12345
             </p>
             <form (ngSubmit)="handelLogIn(loginForm)" [formGroup]="loginForm">
-
-
                 <input formControlName="email" type="email " class="form-control no-border rounded-0 mb-3"
                     placeholder="Email">
                 <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched"
@@ -33,7 +27,6 @@
                     <p *ngIf="loginForm.get('email')?.getError('email')" class='m-0'>Email inValid</p>
                     <p *ngIf="loginForm.get('email')?.getError('required')" class="m-0 ">Email is Required</p>
                 </div>
-
                 <input formControlName="password" type="password" class="form-control no-border rounded-0 mb-3"
                     placeholder="Password">
                 <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched"
@@ -43,24 +36,15 @@
                     <p *ngIf="loginForm.get('password')?.getError('required')" class="m-0 ">password is Required</p>
                 </div>
                 <div class="m-auto">
-
                     <p>If you need to make an account <span class="fw-bold">
                             <a title="signUp" routerLink="/signup">SignUp </a>
                         </span></p>
-
                 </div>
-
-
-                <!-- <input formControlName="rePassword" type="password " class="form-control no-border rounded-0 mb-2" placeholder="rePassword"> -->
-                <!-- <button class="btn bg-danger text-white">Create Account</button> -->
-                <button title="logIn" [disabled]="loginForm.invalid" type="submit" class="btn btn-color text-white p-3 w-100 mb-2">
+                <button title="logIn" [disabled]="loginForm.invalid" type="submit"
+                    class="btn btn-color text-white p-3 w-100 mb-2">
                     <i *ngIf="isLoadind" class="fas fa-spinner fa-spin spinner"></i>
                     <span *ngIf="!isLoadind"> login</span>
                 </button>
-
-                <!-- <div class="m-auto">
-                    <p>Already have account? <span class="fw-bold">Log in</span></p>
-                </div> -->
             </form>
         </div>
     </div>
