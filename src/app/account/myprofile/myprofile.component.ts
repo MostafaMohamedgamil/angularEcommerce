@@ -31,21 +31,26 @@ export class MyprofileComponent {
       Validators.pattern(/^01[0125][0-9]{8}$/),
     ]),
   });
+  
   updateData(form: FormGroup) {
     if (form.valid) {
+      console.log("Form Data: ", form.value); // عرض البيانات قبل الإرسال
       this._Auth.updateUserData(form.value).subscribe({
         next: (res) => {
-          console.log("res update Data", res);
+          console.log("Response: ", res); // عرض الرد عند نجاح الطلب
           this.toastr.success('Data Has Updated!', res.message);
-
+          // يمكنك هنا تحديث localStorage
         },
         error: (err) => {
-          this.toastr.error('Data Has Error', err.message);
-
+          console.error("Error: ", err); // عرض الخطأ في حال وجوده
+          this.toastr.error('Data Has Error', err.message || 'Unknown error occurred');
         }
       })
+    } else {
+      console.log("Form is invalid", form); // عرض بيانات النموذج في حال كان غير صالح
     }
   }
+
   ngOnInit(): void {
     console.log("form", this.form);
     this.form.patchValue(
