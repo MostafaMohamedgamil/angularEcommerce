@@ -30,16 +30,23 @@ export class CartService {
     token: localStorage.getItem('token'),
   };
 
-  addToCart(productId: string): Observable<any> {   
+  addToCart(productId: string): Observable<any> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('User is not authenticated');
+    }
+  
     const BASE_URL = environment.BASE_URL;
     return this._HttpClient.post(
       BASE_URL + `cart`,
       { productId: productId },
       {
-        headers: this.headers,
+        headers: { token },
       }
     );
   }
+
+
 
   getLoggedUserCart(): Observable<any> {
     const BASE_URL = environment.BASE_URL + 'cart';
