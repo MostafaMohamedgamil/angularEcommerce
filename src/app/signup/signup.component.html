@@ -1,17 +1,42 @@
 <div class="container">
-    <div class="w-75 mx-auto py-4">
-        <!-- <h4>Rgister Now</h4> -->
-        <form [formGroup]="registerForm">
+    <div class=" d-flex align-items-center justify-content-center">
+        <form (ngSubmit)="handelOTP(otpForm)" [formGroup]="otpForm">
+            <input formControlName="phone" type="tel " class="form-control no-border rounded-0 mb-3"
+                placeholder="Phone">
+            <div *ngIf="otpForm.get('phone')?.errors && otpForm.get('phone')?.touched"
+                class="alert alert-danger">
+                <p *ngIf="otpForm.get('phone')?.getError('pattern')" class='m-0'>Phone must be an Egyptian
+                    number</p>
+                <p *ngIf="otpForm.get('phone')?.getError('required')" class="m-0 ">phone is Required</p>
+            </div>
+
+            <button title="create account" [disabled]="otpForm.invalid" type="submit"
+                class="btn btn-color text-white p-3 w-100 mb-2">
+                <i *ngIf="isLoadind" class="fas fa-spinner fa-spin spinner"></i>
+                <span *ngIf="!isLoadind"> Send code</span>
+            </button>
 
         </form>
     </div>
-</div>
 
+
+    <div class=" d-flex justify-content-center align-items-center">
+        <div class="position-relative">
+            <div class="card p-2 text-center">
+                <h6>Please enter the one time password <br> to verify your account</h6>
+               
+                <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2"> <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="second" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="third" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="fourth" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="fifth" maxlength="1" /> <input class="m-2 text-center form-control rounded" type="text" id="sixth" maxlength="1" /> </div>
+                <div class="mt-4"> <button class="btn btn-danger px-4 validate">Validate</button> </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 <div class="container ms-0 toMarginTopBottom">
     <div class="row align-items-center justify-content-center g-5">
         <div class="col-md-8 ps-0">
-            <img src="../../assets/signUp.jpg" alt="signUp" >
+            <img src="../../assets/signUp.jpg" alt="signUp">
         </div>
         <div class="col-md-4">
             <div *ngIf="apiError" class="alert alert-danger">{{apiError}}</div>
@@ -62,15 +87,16 @@
                 </div>
 
 
-                <button title="create account" [disabled]="registerForm.invalid" type="submit" class="btn btn-color text-white p-3 w-100 mb-2">
+                <button title="create account" [disabled]="registerForm.invalid" type="submit"
+                    class="btn btn-color text-white p-3 w-100 mb-2">
                     <i *ngIf="isLoadind" class="fas fa-spinner fa-spin spinner"></i>
                     <span *ngIf="!isLoadind"> Create Account</span>
                 </button>
 
                 <div class="m-auto">
                     <p>Already have account? <span class="fw-bold">
-                        <a title="login" routerLink="/login">Log in</a>
-                    </span></p>
+                            <a title="login" routerLink="/login">Log in</a>
+                        </span></p>
                 </div>
             </form>
         </div>

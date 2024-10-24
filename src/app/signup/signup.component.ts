@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { AuthService } from '../shared/services/auth.service';
 import { Router } from '@angular/router';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-signup',
@@ -61,4 +61,19 @@ export class SignupComponent {
       });
     }
   }
+
+  ///////////////////////////////////---------OTP---------///////////////////////////////////
+  //---------OTP---------
+
+  otpForm:FormGroup = new FormGroup({
+    phone: new FormControl(null, [
+      Validators.required,
+      Validators.pattern(/^01[0125][0-9]{8}$/),
+    ]),
+  });
+
+  handelOTP(otpForm: FormGroup){
+
+  }
+  
 }
